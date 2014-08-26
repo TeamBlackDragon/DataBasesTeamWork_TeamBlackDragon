@@ -1,0 +1,2 @@
+C:\Users\TEDI-05\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NinjaFactory.exe.config
+C:\Users\TEDI-05\Desktop\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config
