@@ -1,0 +1,8 @@
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb

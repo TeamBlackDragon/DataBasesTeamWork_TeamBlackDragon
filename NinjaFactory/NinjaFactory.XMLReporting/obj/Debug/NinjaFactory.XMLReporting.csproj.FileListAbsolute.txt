@@ -1,0 +1,10 @@
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.csprojResolveAssemblyReference.cache
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll.config

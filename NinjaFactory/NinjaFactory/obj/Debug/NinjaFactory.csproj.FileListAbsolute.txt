@@ -1,6 +1,5 @@
 C:\Users\TEDI-05\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NinjaFactory.exe.config
 C:\Users\TEDI-05\Desktop\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config
-D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.pdb
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csprojResolveAssemblyReference.cache
@@ -9,3 +8,10 @@ D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\Nin
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csproj.GenerateResource.Cache
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.exe
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\EntityFramework.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.DataBase.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.XMLReporting.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.DataBase.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.XMLReporting.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\EntityFramework.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config

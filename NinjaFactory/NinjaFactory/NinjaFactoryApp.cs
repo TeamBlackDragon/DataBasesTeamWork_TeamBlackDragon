@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using NinjaFactory.DataBase;
+using NinjaFactory.XMLReporting;
+
 namespace NinjaFactory
 {
     /// <summary>
@@ -86,7 +89,11 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void CreateReportForLostNinjas(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+            XMLReportCreator creator = new XMLReportCreator();
+            creator.CreateLostNinjasReport(db);
+
+            //throw new NotImplementedException("Not Implemented");
         }
 
         /// <summary>
