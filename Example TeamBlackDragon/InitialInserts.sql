@@ -1,3 +1,5 @@
+USE [TeamworkBlackDragon]
+
 INSERT INTO Clients (Name) VALUES ('Big Fat Joe')
 INSERT INTO Clients (Name) VALUES ('Don Korleone')
 INSERT INTO Clients (Name) VALUES ('Don Kapisaro')
