@@ -38,17 +38,6 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Creates the backup.
-        /// </summary>
-        /// <param name="sender"> The sender. </param>
-        /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
-        /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
-        private void CreateBackup(object sender, EventArgs e)
-        {
-            throw new NotImplementedException("Not Implemented");
-        }
-
-        /// <summary>
         /// Creates the income report.
         /// </summary>
         /// <param name="sender"> The sender. </param>
@@ -103,6 +92,17 @@ namespace NinjaFactory
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void GetReportsAndFinalizeOrders(object sender, EventArgs e)
+        {
+            throw new NotImplementedException("Not Implemented");
+        }
+
+        /// <summary>
+        /// Creates the backup.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
+        /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
+        private void LoadCatalogueInMySql(object sender, EventArgs e)
         {
             throw new NotImplementedException("Not Implemented");
         }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NinjaFactoryApp));
             this.AddNewOrdersButton = new System.Windows.Forms.Button();
             this.GetReportsAndFinalizeOrdersButton = new System.Windows.Forms.Button();
-            this.CreateBackupButton = new System.Windows.Forms.Button();
+            this.LoadCatalogueInMySQLButton = new System.Windows.Forms.Button();
             this.CreateReportForLostNinjasButton = new System.Windows.Forms.Button();
             this.RemoveLostNinjasButton = new System.Windows.Forms.Button();
             this.CreateNinjaCatalogueButton = new System.Windows.Forms.Button();
@@ -59,15 +59,15 @@
             this.GetReportsAndFinalizeOrdersButton.UseVisualStyleBackColor = true;
             this.GetReportsAndFinalizeOrdersButton.Click += new System.EventHandler(this.GetReportsAndFinalizeOrders);
             // 
-            // CreateBackupButton
+            // LoadCatalogueInMySQLButton
             // 
-            this.CreateBackupButton.Location = new System.Drawing.Point(12, 408);
-            this.CreateBackupButton.Name = "CreateBackupButton";
-            this.CreateBackupButton.Size = new System.Drawing.Size(207, 37);
-            this.CreateBackupButton.TabIndex = 2;
-            this.CreateBackupButton.Text = "Create database backup (in MySQL)";
-            this.CreateBackupButton.UseVisualStyleBackColor = true;
-            this.CreateBackupButton.Click += new System.EventHandler(this.CreateBackup);
+            this.LoadCatalogueInMySQLButton.Location = new System.Drawing.Point(12, 408);
+            this.LoadCatalogueInMySQLButton.Name = "LoadCatalogueInMySQLButton";
+            this.LoadCatalogueInMySQLButton.Size = new System.Drawing.Size(207, 37);
+            this.LoadCatalogueInMySQLButton.TabIndex = 2;
+            this.LoadCatalogueInMySQLButton.Text = "Load JSON Catalogue in MySQL";
+            this.LoadCatalogueInMySQLButton.UseVisualStyleBackColor = true;
+            this.LoadCatalogueInMySQLButton.Click += new System.EventHandler(this.LoadCatalogueInMySql);
             // 
             // CreateReportForLostNinjasButton
             // 
@@ -119,7 +119,7 @@
             this.CreateNinjaRankingRaportButton.UseVisualStyleBackColor = true;
             this.CreateNinjaRankingRaportButton.Click += new System.EventHandler(this.CreateNinjaRankingRaport);
             // 
-            // Form1
+            // NinjaFactoryApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,10 +130,10 @@
             this.Controls.Add(this.CreateNinjaCatalogueButton);
             this.Controls.Add(this.RemoveLostNinjasButton);
             this.Controls.Add(this.CreateReportForLostNinjasButton);
-            this.Controls.Add(this.CreateBackupButton);
+            this.Controls.Add(this.LoadCatalogueInMySQLButton);
             this.Controls.Add(this.GetReportsAndFinalizeOrdersButton);
             this.Controls.Add(this.AddNewOrdersButton);
-            this.Name = "Form1";
+            this.Name = "NinjaFactoryApp";
             this.Text = "Ninja Factory - TeamBlackDragon";
             this.TopMost = true;
             this.ResumeLayout(false);
@@ -144,7 +144,7 @@
 
         private System.Windows.Forms.Button AddNewOrdersButton;
         private System.Windows.Forms.Button GetReportsAndFinalizeOrdersButton;
-        private System.Windows.Forms.Button CreateBackupButton;
+        private System.Windows.Forms.Button LoadCatalogueInMySQLButton;
         private System.Windows.Forms.Button CreateReportForLostNinjasButton;
         private System.Windows.Forms.Button RemoveLostNinjasButton;
         private System.Windows.Forms.Button CreateNinjaCatalogueButton;
