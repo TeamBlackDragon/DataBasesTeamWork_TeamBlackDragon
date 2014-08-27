@@ -1,2 +1,11 @@
 C:\Users\TEDI-05\Desktop\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NinjaFactory.exe.config
 C:\Users\TEDI-05\Desktop\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe.config
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.exe
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csprojResolveAssemblyReference.cache
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.NinjaFactoryApp.resources
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.Properties.Resources.resources
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csproj.GenerateResource.Cache
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.exe
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.pdb
