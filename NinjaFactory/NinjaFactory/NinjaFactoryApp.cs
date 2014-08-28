@@ -34,7 +34,18 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void AddNewOrders(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "ZIP files (*.zip)|*.zip";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+                throw new NotImplementedException("Not Implemented");
+            }
         }
 
         /// <summary>
@@ -45,7 +56,19 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void CreateIncomeReport(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+
+                throw new NotImplementedException("Not Implemented");
+            }
         }
 
         /// <summary>
@@ -56,7 +79,19 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void CreateNinjaCatalogue(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "JSON files (*.json)|*.json";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+
+                throw new NotImplementedException("Not Implemented");
+            }
         }
 
         /// <summary>
@@ -67,7 +102,19 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void CreateNinjaRankingRaport(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "Excel files (*.xls)|*.xls";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+
+                throw new NotImplementedException("Not Implemented");
+            }
         }
 
         /// <summary>
@@ -78,11 +125,17 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void CreateReportForLostNinjas(object sender, EventArgs e)
         {
-            TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
-            XMLReportCreator creator = new XMLReportCreator();
-            creator.CreateLostNinjasReport(db);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            //throw new NotImplementedException("Not Implemented");
+            saveFileDialog.Filter = "xml files (*.xml)|*.xml";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                XMLReportCreator creator = new XMLReportCreator();
+                creator.CreateLostNinjasReport(db, filePath);
+            }
         }
 
         /// <summary>
@@ -104,7 +157,18 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void LoadCatalogueInMySql(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "JSON files (*.json)|*.json";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+                throw new NotImplementedException("Not Implemented");
+            }
         }
 
         /// <summary>
@@ -115,7 +179,18 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void RemoveLostNinjas(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "xml files (*.xml)|*.xml";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+
+                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
+                throw new NotImplementedException("Not Implemented");
+            }
         }
     }
 }

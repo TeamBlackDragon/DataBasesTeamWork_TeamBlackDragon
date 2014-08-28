@@ -13,24 +13,15 @@ namespace NinjaFactory.XMLReporting
 {
     public class XMLReportCreator
     {
-        public void CreateLostNinjasReport(TeamworkBlackDragonEntities db)
+        public void CreateLostNinjasReport(TeamworkBlackDragonEntities db, string filePath)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            DateTime startedBefore = DateTime.Now.AddMonths(-2);
 
-            saveFileDialog.Filter = "xml files (*.xml)|*.xml";
-            saveFileDialog.RestoreDirectory = true;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            IEnumerable<LostNinjaReport> oldUnfinishedJobs;
+            using (db)
             {
-                string filePath = saveFileDialog.FileName;
-                DateTime startedBefore = DateTime.Now.AddMonths(-2);
-
-                IEnumerable<LostNinjaReport> oldUnfinishedJobs;
-                using (db)
-                {
-                    oldUnfinishedJobs = SelectOldUnfinishedJobs(db, startedBefore);
-                    WriteToFile(oldUnfinishedJobs, filePath);
-                }
+                oldUnfinishedJobs = SelectOldUnfinishedJobs(db, startedBefore);
+                WriteToFile(oldUnfinishedJobs, filePath);
             }
         }
 
