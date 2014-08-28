@@ -29,6 +29,7 @@ namespace NinjaFactory.XMLReporting
         {
             return db.Jobs
                 .Where(job => job.IsSuccessfull.HasValue == false)
+                .Where(job => job.Ninja.IsDeleted == false)
                 .Where(job => job.StartDate < startedBefore)
                 .Select(job => new LostNinjaReport()
                        {

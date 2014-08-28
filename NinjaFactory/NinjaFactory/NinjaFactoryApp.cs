@@ -59,6 +59,7 @@ namespace NinjaFactory
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+            saveFileDialog.FileName = "IncomeReport";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -82,6 +83,7 @@ namespace NinjaFactory
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "JSON files (*.json)|*.json";
+            saveFileDialog.FileName = "NinjaCatalogue";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -105,6 +107,7 @@ namespace NinjaFactory
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "Excel files (*.xls)|*.xls";
+            saveFileDialog.FileName = "NinjaRankingReport";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -128,6 +131,7 @@ namespace NinjaFactory
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog.FileName = "LostNinjasReport";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -188,8 +192,8 @@ namespace NinjaFactory
                 string filePath = openFileDialog.FileName;
                 TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
 
-                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-                throw new NotImplementedException("Not Implemented");
+                XMLReportParser reportParser = new XMLReportParser();
+                reportParser.ParseLostNinjasReport(db, filePath);
             }
         }
     }
