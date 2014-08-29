@@ -17,7 +17,14 @@ namespace NinjaFactory
         public NinjaFactoryApp()
         {
             InitializeComponent();
+            this.DB = new NinjasData();
         }
+
+        /// <summary>
+        /// Gets or sets the database.
+        /// </summary>
+        /// <value> The database. </value>
+        private INinjaFactoryData DB { get; set; }
 
         /// <summary>
         /// Adds the new orders.
@@ -34,7 +41,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 throw new NotImplementedException("Not Implemented");
@@ -57,7 +64,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -81,7 +88,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -105,7 +112,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -129,7 +136,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
                 XMLReportCreator creator = new XMLReportCreator();
                 creator.CreateLostNinjasReport(db, filePath);
             }
@@ -161,7 +168,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 throw new NotImplementedException("Not Implemented");
@@ -183,7 +190,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                INinjaFactoryData db = new NinjasData();
+                INinjaFactoryData db = this.DB;
 
                 XMLReportParser reportParser = new XMLReportParser();
                 reportParser.ParseLostNinjasReport(db, filePath);
