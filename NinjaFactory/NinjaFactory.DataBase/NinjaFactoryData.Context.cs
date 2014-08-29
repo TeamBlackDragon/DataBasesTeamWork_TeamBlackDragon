@@ -12,8 +12,8 @@ namespace NinjaFactory.DataBase
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    public partial class TeamworkBlackDragonEntities : DbContext, ITeamworkBlackDragonEntities
+    
+    public partial class TeamworkBlackDragonEntities : DbContext
     {
         public TeamworkBlackDragonEntities()
             : base("name=TeamworkBlackDragonEntities")

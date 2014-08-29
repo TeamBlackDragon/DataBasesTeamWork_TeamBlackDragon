@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using NinjaFactory.DataBase;
 using NinjaFactory.XMLReporting;
 
@@ -41,7 +34,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 throw new NotImplementedException("Not Implemented");
@@ -64,7 +57,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -88,7 +81,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -112,7 +105,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
 
@@ -136,7 +129,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
                 XMLReportCreator creator = new XMLReportCreator();
                 creator.CreateLostNinjasReport(db, filePath);
             }
@@ -168,7 +161,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 throw new NotImplementedException("Not Implemented");
@@ -190,7 +183,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                TeamworkBlackDragonEntities db = new TeamworkBlackDragonEntities();
+                INinjaFactoryData db = new NinjasData();
 
                 XMLReportParser reportParser = new XMLReportParser();
                 reportParser.ParseLostNinjasReport(db, filePath);

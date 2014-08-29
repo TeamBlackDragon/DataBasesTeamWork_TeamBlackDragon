@@ -13,21 +13,19 @@ namespace NinjaFactory.XMLReporting
 {
     public class XMLReportCreator
     {
-        public void CreateLostNinjasReport(TeamworkBlackDragonEntities db, string filePath)
+        public void CreateLostNinjasReport(INinjaFactoryData db, string filePath)
         {
             DateTime startedBefore = DateTime.Now.AddMonths(-2);
 
             IEnumerable<LostNinjaReport> oldUnfinishedJobs;
-            using (db)
-            {
-                oldUnfinishedJobs = SelectOldUnfinishedJobs(db, startedBefore);
-                WriteToFile(oldUnfinishedJobs, filePath);
-            }
+
+            oldUnfinishedJobs = SelectOldUnfinishedJobs(db, startedBefore);
+            WriteToFile(oldUnfinishedJobs, filePath);
         }
 
-        private IEnumerable<LostNinjaReport> SelectOldUnfinishedJobs(TeamworkBlackDragonEntities db, DateTime startedBefore)
+        private IEnumerable<LostNinjaReport> SelectOldUnfinishedJobs(INinjaFactoryData db, DateTime startedBefore)
         {
-            return db.Jobs
+            return db.Jobs.All()
                 .Where(job => job.IsSuccessfull.HasValue == false)
                 .Where(job => job.Ninja.IsDeleted == false)
                 .Where(job => job.StartDate < startedBefore)

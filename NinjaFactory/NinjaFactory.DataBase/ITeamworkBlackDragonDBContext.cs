@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 
 namespace NinjaFactory.DataBase
 {
-    public interface ITeamworkBlackDragonEntities
+    public interface ITeamworkBlackDragonDBContext
     {
         DbSet<Client> Clients { get; set; }
 
@@ -15,5 +16,11 @@ namespace NinjaFactory.DataBase
         DbSet<Ninja> Ninjas { get; set; }
 
         DbSet<Speciality> Specialities { get; set; }
+
+        DbEntityEntry<T> Entry<T>(T entity) where T : class;
+
+        void SaveChanges();
+
+        DbSet<T> Set<T>() where T : class;
     }
 }
