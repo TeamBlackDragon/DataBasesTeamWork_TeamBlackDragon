@@ -7,6 +7,9 @@ using System.Text;
 
 namespace NinjaFactory.DataBase
 {
+    /// <summary>
+    /// A Database context working with the TeamworkBlackDragon Database
+    /// </summary>
     public interface ITeamworkBlackDragonDBContext
     {
         DbSet<Client> Clients { get; set; }

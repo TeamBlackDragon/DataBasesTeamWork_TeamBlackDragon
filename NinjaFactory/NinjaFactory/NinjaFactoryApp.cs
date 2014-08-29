@@ -137,7 +137,7 @@ namespace NinjaFactory
             {
                 string filePath = saveFileDialog.FileName;
                 INinjaFactoryData db = this.DB;
-                XMLReportCreator creator = new XMLReportCreator();
+                XmlLostNinjaReportCreator creator = new XmlLostNinjaReportCreator();
                 creator.CreateLostNinjasReport(db, filePath);
             }
         }
@@ -192,8 +192,8 @@ namespace NinjaFactory
                 string filePath = openFileDialog.FileName;
                 INinjaFactoryData db = this.DB;
 
-                XMLReportParser reportParser = new XMLReportParser();
-                reportParser.ParseLostNinjasReport(db, filePath);
+                XmlLostNinjaReportParser reportParser = new XmlLostNinjaReportParser();
+                reportParser.DeleteNinjasMentionedInLostNinjaReport(db, filePath);
             }
         }
     }

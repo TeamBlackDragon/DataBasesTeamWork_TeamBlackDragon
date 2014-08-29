@@ -11,8 +11,16 @@ using NinjaFactory.DataBase;
 
 namespace NinjaFactory.XMLReporting
 {
-    public class XMLReportCreator
+    /// <summary>
+    /// Creates lost ninja reports as XML files
+    /// </summary>
+    public class XmlLostNinjaReportCreator
     {
+        /// <summary>
+        /// Creates the lost ninjas report.
+        /// </summary>
+        /// <param name="db"> The database. </param>
+        /// <param name="filePath"> The file path. </param>
         public void CreateLostNinjasReport(INinjaFactoryData db, string filePath)
         {
             DateTime startedBefore = DateTime.Now.AddMonths(-2);
@@ -23,6 +31,12 @@ namespace NinjaFactory.XMLReporting
             WriteToFile(oldUnfinishedJobs, filePath);
         }
 
+        /// <summary>
+        /// Selects the old unfinished jobs.
+        /// </summary>
+        /// <param name="db"> The database. </param>
+        /// <param name="startedBefore"> The started before. </param>
+        /// <returns> </returns>
         private IEnumerable<LostNinjaReport> SelectOldUnfinishedJobs(INinjaFactoryData db, DateTime startedBefore)
         {
             return db.Jobs.All()
@@ -37,6 +51,11 @@ namespace NinjaFactory.XMLReporting
                        });
         }
 
+        /// <summary>
+        /// Writes the report to an XML file.
+        /// </summary>
+        /// <param name="oldUnfinishedJobs"> The old unfinished jobs. </param>
+        /// <param name="filePath"> The file path. </param>
         private void WriteToFile(IEnumerable<LostNinjaReport> oldUnfinishedJobs, string filePath)
         {
             XElement ninjaXml = new XElement("lostNinjaReportsContainer");

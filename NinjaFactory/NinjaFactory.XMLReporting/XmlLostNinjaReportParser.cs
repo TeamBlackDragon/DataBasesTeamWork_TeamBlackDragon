@@ -9,9 +9,17 @@ using NinjaFactory.DataBase;
 
 namespace NinjaFactory.XMLReporting
 {
-    public class XMLReportParser
+    /// <summary>
+    /// Reads lost ninja reports and executes the commands in them
+    /// </summary>
+    public class XmlLostNinjaReportParser
     {
-        public void ParseLostNinjasReport(INinjaFactoryData db, string filePath)
+        /// <summary>
+        /// Deletes the ninjas mentioned in a lost ninjas report.
+        /// </summary>
+        /// <param name="db"> The database. </param>
+        /// <param name="filePath"> The file path. </param>
+        public void DeleteNinjasMentionedInLostNinjaReport(INinjaFactoryData db, string filePath)
         {
             XDocument lostNinjaReports = XDocument.Load(filePath);
 
@@ -22,6 +30,12 @@ namespace NinjaFactory.XMLReporting
             RemoveFromDataBase(lostNinjas, failedMissions, db);
         }
 
+        /// <summary>
+        /// Gets the failed missions.
+        /// </summary>
+        /// <param name="lostNinjaReports"> The lost ninja reports. </param>
+        /// <param name="db"> The database. </param>
+        /// <returns> </returns>
         private IQueryable<Job> GetFailedMissions(XDocument lostNinjaReports, INinjaFactoryData db)
         {
             IEnumerable<int> failedMissionsIds = new List<int>();
@@ -33,6 +47,12 @@ namespace NinjaFactory.XMLReporting
             return failedMissions;
         }
 
+        /// <summary>
+        /// Gets the lost ninjas.
+        /// </summary>
+        /// <param name="lostNinjaReports"> The lost ninja reports. </param>
+        /// <param name="db"> The database. </param>
+        /// <returns> </returns>
         private IQueryable<Ninja> GetLostNinjas(XDocument lostNinjaReports, INinjaFactoryData db)
         {
             IEnumerable<int> lostNinjaIds = new List<int>();
@@ -43,6 +63,12 @@ namespace NinjaFactory.XMLReporting
             return lostNinjas;
         }
 
+        /// <summary>
+        /// Removes the lost ninjas from the data base.
+        /// </summary>
+        /// <param name="lostNinjas"> The lost ninjas. </param>
+        /// <param name="failedMissions"> The failed missions. </param>
+        /// <param name="db"> The database. </param>
         private void RemoveFromDataBase(IQueryable<Ninja> lostNinjas, IQueryable<Job> failedMissions, INinjaFactoryData db)
         {
             foreach (Ninja nin in lostNinjas)
