@@ -47,57 +47,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>NinjaFactoryData.tt</DependentUpon>
     </Compile>
+    <Compile Include="ITeamworkBlackDragonEntities.cs" />
     <Compile Include="Job.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>NinjaFactoryData.tt</DependentUpon>
     </Compile>
     <Compile Include="Ninja.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>NinjaFactoryData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NinjaFactoryData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NinjaFactoryData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NinjaFactoryData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NinjaFactoryData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NinjaFactoryData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NinjaFactoryData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Speciality.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>NinjaFactoryData.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model1.edmx">
+    <EntityDeploy Include="NinjaFactoryData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>NinjaFactoryData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Model1.Context.tt">
+    <None Include="NinjaFactoryData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>NinjaFactoryData.edmx</DependentUpon>
+      <LastGenOutput>NinjaFactoryData.Context.cs</LastGenOutput>
     </None>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="NinjaFactoryData.edmx.diagram">
+      <DependentUpon>NinjaFactoryData.edmx</DependentUpon>
     </None>
-    <None Include="Model1.tt">
+    <None Include="NinjaFactoryData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>NinjaFactoryData.edmx</DependentUpon>
+      <LastGenOutput>NinjaFactoryData.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
