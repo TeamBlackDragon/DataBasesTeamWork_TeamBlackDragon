@@ -14,3 +14,7 @@ E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
