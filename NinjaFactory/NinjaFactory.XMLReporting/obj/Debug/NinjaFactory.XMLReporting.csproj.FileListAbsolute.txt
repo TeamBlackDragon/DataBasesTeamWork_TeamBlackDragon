@@ -8,3 +8,13 @@ D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.dll
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.pdb
 D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll.config
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll.config
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.pdb
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.pdb
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.xml
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.csprojResolveAssemblyReference.cache
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.dll
+E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.pdb

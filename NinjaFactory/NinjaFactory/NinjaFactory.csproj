@@ -57,7 +57,7 @@
     <Compile Include="NinjaFactoryApp.Designer.cs">
       <DependentUpon>NinjaFactoryApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="NinjaFactoryApp.resx">
       <DependentUpon>NinjaFactoryApp.cs</DependentUpon>

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NinjaFactory.DataBase;
-
-namespace NinjaFactory
+﻿namespace NinjaFactory
 {
-    internal static class Program
+    using System;
+    using System.Windows.Forms;
+
+    internal static class EntryPoint
     {
         /// <summary>
         /// The main entry point for the application.

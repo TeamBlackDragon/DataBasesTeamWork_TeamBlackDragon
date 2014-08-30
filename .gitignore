@@ -1,2 +1,7 @@
 # Ignore App.Config
-*/*/App.Config
+./NinjaFactory/NinjaFactory/bin
+./NinjaFactory/NinjaFactory/obj
+./NinjaFactory/NinjaFactory.DataBase/bin
+./NinjaFactory/NinjaFactory.DataBase/obj
+./NinjaFactory/NinjaFactory.XMLReporting/bin
+./NinjaFactory/NinjaFactory.XMLReporting/obj
