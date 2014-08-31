@@ -1,17 +1,20 @@
 ﻿namespace NinjaFactory.Imports
 {
+    using NinjaFactory.DataBase;
     using System;
     using System.Data;
     using System.Data.OleDb;
     using System.IO;
     using System.IO.Compression;
+    using System.Linq;
+    using System.Windows.Forms;
 
     public class ExcelImport
     {
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
-        
+
         //The name of the zip file
         //string zipFileName = "Sample-Sales-Reports.zip";
 
@@ -33,23 +36,120 @@
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
 
-        private static void ExtractFile(string zipFileName, string zipSourcePath, string extractToPath)
+        public static void ExtractFile(string fullFilePath, string extractToPath)
         {
-            //Check if the folder is not empty to delete everything in it
-
-            if (Directory.GetDirectories(extractToPath).Length == 0 && Directory.GetFiles(extractToPath).Length == 0)
+            int index = fullFilePath.LastIndexOf("\\");
+            if (index == -1)
             {
-                Console.WriteLine("Folder is empty!");
+                index = 0;
+            }
+            string directory = fullFilePath.Substring(0, index);
+            string fileName = fullFilePath.Substring(index);
+            ExtractFile(fileName, directory, extractToPath);
+        }
+
+        public static void ExtractFile(string zipFileName, string zipSourcePath, string extractToPath)
+        {
+            //Check if the extractToPath folder exists
+            if (!Directory.Exists(extractToPath))
+            {
+                Directory.CreateDirectory(extractToPath);
+            }
+
+            //Check if the folder is not empty to delete everything in it
+            if (Directory.GetDirectories(extractToPath).Length >= 0 && Directory.GetFiles(extractToPath).Length >= 0)
+            {
+                Directory.Delete(extractToPath + "\\" + zipFileName.Split('.')[0], true);
+            }
+
+            //Extract the .zip file
+            ZipFile.ExtractToDirectory(zipSourcePath + "\\" + zipFileName, extractToPath);
+        }
+
+        public static void ProcessExcelFiles(string rootDirPath, string pattern, INinjaFactoryData db)
+        {
+            var files = Directory.GetFiles(rootDirPath, pattern);
+            if (string.IsNullOrEmpty(pattern))
+            {
+                files = Directory.GetFiles(rootDirPath);
+            }
+
+            ImportExcelFilesIntoDb(files, db);
+
+            var directories = Directory.GetDirectories(rootDirPath);
+
+            foreach (var dir in directories)
+            {
+                var dirFiles = Directory.GetFiles(dir, pattern);
+
+                ImportExcelFilesIntoDb(dirFiles, db);
+
+                ProcessExcelFiles(dir, pattern, db);
+            }
+        }
+
+        private static bool CheckJobIsValid(DataBase.Job job, INinjaFactoryData db)
+        {
+            var unfinishedJobsCountOfSameNinja = db.Jobs
+                .Where(j => j.NinjaId == job.NinjaId)
+                .Where(j => j.IsSuccessfull.HasValue == false)
+                .Count();
+
+            if (unfinishedJobsCountOfSameNinja > 0)
+            {
+                throw new ArgumentException("A ninja can not take two jobs at the same time. Job '" + job.Name + "' was not imported");
             }
             else
             {
-                Console.WriteLine("Folder is not empty!");
-                Directory.Delete(extractToPath + "\\" + zipFileName.Split('.')[0], true);
+                return true;
             }
-            
-            //Extract the .zip file
+        }
 
-            ZipFile.ExtractToDirectory(zipSourcePath, extractToPath);
+        //In this method require the db as parameter if needed
+        private static void ImportExcelFilesIntoDb(string[] files, INinjaFactoryData db)
+        {
+            string sheetName = "Sales";
+
+            foreach (var filePath in files)
+            {
+                DataTable excelTable = ReadExcelFile(filePath, sheetName);
+
+                for (int i = 2; i < excelTable.Rows.Count - 1; i++)
+                {
+                    var row = excelTable.Rows[i];
+
+                    int ninjaId = int.Parse(row.ItemArray[0].ToString());
+                    int clientId = int.Parse(row.ItemArray[1].ToString());
+                    string briefDescription = row.ItemArray[2].ToString();
+                    double jobPrice = double.Parse(row.ItemArray[3].ToString());
+
+                    DataBase.Job job = new DataBase.Job()
+                    {
+                        NinjaId = ninjaId,
+                        ClientId = clientId,
+                        Name = briefDescription,
+                        Price = (decimal)jobPrice,
+                        StartDate = DateTime.Now,
+                        IsDeleted = false
+                    };
+
+                    try
+                    {
+                        CheckJobIsValid(job, db);
+                        ImportJobToDb(job, db);
+                    }
+                    catch (ArgumentException ae)
+                    {
+                        MessageBox.Show(ae.Message);
+                    }
+                }
+            }
+        }
+
+        private static void ImportJobToDb(DataBase.Job job, INinjaFactoryData db)
+        {
+            db.Jobs.Add(job);
+            db.SaveChanges();
         }
 
         private static DataTable ReadExcelFile(string filePath, string sheetName)
@@ -73,50 +173,10 @@
                     {
                         adapter.SelectCommand = command;
                         adapter.Fill(table);
-                        
+
                         return table;
                     }
                 }
-            }
-        }
-        
-        //In this method require the db as parameter if needed
-        private static void ImportExcelFilesIntoDb(string[] files)
-        {
-            string sheetName = "Sales";
-
-            foreach (var filePath in files)
-            {
-                DataTable excelTable = ReadExcelFile(filePath, sheetName);
-                
-                for (int i = 2; i < excelTable.Rows.Count - 1; i++)
-                {
-                    var row = excelTable.Rows[i];
-
-                    //First item => row.ItemArray[0]
-                    //Second item => row.ItemArray[1]
-                    //...
-
-                    //INSERT INTO MSSQL(...) VALUES(...)
-                }
-            }
-        }
-
-        private static void ProcessExcelFiles(string rootDirPath, string pattern)
-        {
-            var files = Directory.GetFiles(rootDirPath, pattern);
-
-            ImportExcelFilesIntoDb(files);
-
-            var directories = Directory.GetDirectories(rootDirPath);
-
-            foreach (var dir in directories)
-            {
-                var dirFiles = Directory.GetFiles(dir, pattern);
-
-                ImportExcelFilesIntoDb(dirFiles);
-
-                ProcessExcelFiles(dir, pattern);
             }
         }
     }

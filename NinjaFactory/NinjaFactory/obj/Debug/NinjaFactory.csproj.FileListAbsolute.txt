@@ -30,3 +30,9 @@ E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\Nin
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.NinjaFactoryApp.resources
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.Properties.Resources.resources
 E:\DEV\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csproj.GenerateResource.Cache
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.Imports.dll
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Bson.dll
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Driver.dll
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.Imports.pdb
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Bson.xml
+D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Driver.xml

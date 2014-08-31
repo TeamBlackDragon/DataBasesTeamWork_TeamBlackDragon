@@ -1,18 +1,19 @@
-﻿using System;
+﻿using NinjaFactory.DataBase;
+using NinjaFactory.Imports;
+using NinjaFactory.XMLReporting;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using NinjaFactory.DataBase;
-using NinjaFactory.XMLReporting;
 
 namespace NinjaFactory
 {
     /// <summary>
-    /// Every ninja fabricator should buy this!
+    ///    Every ninja fabricator should buy this!
     /// </summary>
     public partial class NinjaFactoryApp : Form
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NinjaFactoryApp" /> class.
+        ///    Initializes a new instance of the <see cref="NinjaFactoryApp" /> class.
         /// </summary>
         public NinjaFactoryApp()
         {
@@ -21,13 +22,13 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Gets or sets the database.
+        ///    Gets or sets the database.
         /// </summary>
         /// <value> The database. </value>
         private INinjaFactoryData DB { get; set; }
 
         /// <summary>
-        /// Adds the new orders.
+        ///    Adds the new orders.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -43,13 +44,19 @@ namespace NinjaFactory
                 string filePath = openFileDialog.FileName;
                 INinjaFactoryData db = this.DB;
 
+                string directoryOfExtractedFiles = "UnimportedJobs";
+                string pattern = "";
+
+                ExcelImport.ExtractFile(filePath, directoryOfExtractedFiles);
+                ExcelImport.ProcessExcelFiles(directoryOfExtractedFiles, pattern, db);
+
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-                throw new NotImplementedException("Not Implemented");
+                //throw new NotImplementedException("Not Implemented");
             }
         }
 
         /// <summary>
-        /// Creates the income report.
+        ///    Creates the income report.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -73,7 +80,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Creates the ninja catalogue.
+        ///    Creates the ninja catalogue.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -97,7 +104,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Creates the ninja ranking raport.
+        ///    Creates the ninja ranking raport.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -121,7 +128,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Creates the report for lost ninjas.
+        ///    Creates the report for lost ninjas.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -143,7 +150,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Gets the reports and finalize orders.
+        ///    Gets the reports and finalize orders.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -154,7 +161,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Creates the backup.
+        ///    Creates the backup.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -176,7 +183,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        /// Removes the lost ninjas.
+        ///    Removes the lost ninjas.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
