@@ -1,10 +1,15 @@
 ﻿namespace NinjaFactory.Imports
 {
-    using System;
-    using System.Configuration;
     using MongoDB.Bson;
     using MongoDB.Driver;
     using MongoDB.Driver.Builders;
+    using NinjaFactory.DataBase;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Data.Linq;
+    using System.Linq;
+    using System.Windows.Forms;
 
     public class MongoDBImport
     {
@@ -15,7 +20,7 @@
         //var db = GetMongoDatabase(ConfigurationManager.ConnectionStrings["NinjaFactoryMongoDB"].ConnectionString);
 
         //var ninjaJobsCollection = db.GetCollection("jobs");
-            
+
         ////Get all the records in the collection
         //GetAllRecordsInCollection(ninjaJobsCollection);
 
@@ -38,34 +43,166 @@
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
 
-        private static void AddNewEntityToCollection(MongoCollection<BsonDocument> collection, Job newEntity)
+        public static void InsertMongoDbReportsInDatabse(INinjaFactoryData db)
         {
-            var entity = newEntity;
-            collection.Insert(entity);
-
-            //Edit the entity
-            //newJob.Description = "Kill yourself";
-            //collection.Save(newJob);
+            var con = ConfigurationManager.ConnectionStrings["NinjaFactoryMongoDB"];
+            var conStr = con.ConnectionString;
+            InsertMongoDbReportsInDatabse(conStr, db);
         }
-  
-        private static void GetAllRecordsInCollection(MongoCollection<BsonDocument> collection)
-        {
-            var jobs = collection.FindAll();
 
-            foreach (var job in jobs)
+        public static void InsertMongoDbReportsInDatabse(string connectionString, INinjaFactoryData db)
+        {
+            var mongoDatabase = GetMongoDatabase(connectionString);
+            var mongoCollection = mongoDatabase.GetCollection("jobs");
+
+            // -------------------------------------------------------------
+            // This code is for testing
+            ClearRecords(mongoCollection);
+            int addedCount = AddSomeRecords(mongoCollection, db);
+            MessageBox.Show(string.Format("Removed all rows in the Mongo table, and added {0} valid rows for testing.", addedCount));
+
+            // -------------------------------------------------------------
+
+            var reports = GetAllRecordsInCollection(mongoCollection);
+            ExportCollectionToDataBase(reports, db);
+
+            ClearRecords(mongoCollection);
+        }
+
+        private static void AddNewEntityToCollection(MongoCollection<BsonDocument> collection, JobReport newEntity)
+        {
+            collection.Insert(newEntity);
+        }
+
+        private static void AddReportToDb(INinjaFactoryData db, JobReport rep)
+        {
+            Job finishedJob = db.Jobs.Where(j => j.Id == rep.Id).FirstOrDefault();
+            finishedJob.IsSuccessfull = rep.Success;
+            finishedJob.EndDate = rep.EndDate;
+            finishedJob.Ninja.KillCount += rep.KillCount;
+            db.SaveChanges();
+        }
+
+        private static int AddSomeRecords(MongoCollection<BsonDocument> mongoCollection, INinjaFactoryData db)
+        {
+            IQueryable<JobReport> unfinishedJobsReports = db.Jobs
+                .Where(j => j.IsSuccessfull.HasValue == false)
+                .Select(j => new JobReport()
+                    {
+                        Id = j.Id,
+                        Success = true,
+                        EndDate = DateTime.Today,
+                        KillCount = 2
+                    });
+
+            foreach (JobReport jobRep in unfinishedJobsReports)
             {
-                Console.WriteLine(job["Description"]);
+                AddNewEntityToCollection(mongoCollection, jobRep);
+            }
+            return unfinishedJobsReports.Count();
+        }
+
+        private static bool CheckIfReportIsValid(INinjaFactoryData db, JobReport rep)
+        {
+            var job = db.Jobs.Where(j => j.Id == rep.Id).FirstOrDefault();
+
+            if (job == null)
+            {
+                throw new ArgumentOutOfRangeException("There is no job with Id '" + rep.Id + "'");
+            }
+            if (job.IsSuccessfull.HasValue == true)
+            {
+                throw new ArgumentException("The job with Id '" + rep.Id + "' is already compleated");
+            }
+            return true;
+        }
+
+        private static void ClearRecords(MongoCollection<BsonDocument> collection)
+        {
+            collection.RemoveAll();
+        }
+
+        private static void ExportCollectionToDataBase(ICollection<JobReport> reports, INinjaFactoryData db)
+        {
+            foreach (var rep in reports)
+            {
+                // testing. Delete this MessageBox.Show() once the program is confirmed to work.
+                //MessageBox.Show(string.Format(
+                //        "id:{0}, \n" +
+                //        "Success: {1}, \n" +
+                //        "KillCount: {2}, \n" +
+                //        "EndDate: {3}",
+                //        rep.Id,
+                //        rep.Success,
+                //        rep.KillCount,
+                //        rep.EndDate));
+
+                try
+                {
+                    if (CheckIfReportIsValid(db, rep))
+                    {
+                        AddReportToDb(db, rep);
+                    }
+                }
+                catch (ArgumentException ae)
+                {
+                    MessageBox.Show(ae.Message + "\n\n" +
+                        string.Format(
+                        "id:{0}, \n" +
+                        "Success: {1}, \n" +
+                        "KillCount: {2}, \n" +
+                        "EndDate: {3}",
+                        rep.Id,
+                        rep.Success,
+                        rep.KillCount,
+                        rep.EndDate));
+                }
             }
         }
 
-        static MongoDatabase GetMongoDatabase(string connectionString)
+        private static ICollection<JobReport> GetAllRecordsInCollection(MongoCollection<BsonDocument> collection)
         {
-            return new MongoClient(connectionString).GetServer().GetDatabase("NinjasFactoryDB");
+            var jobs = collection.FindAll();
+            List<JobReport> reports = new List<JobReport>();
+            foreach (var job in jobs)
+            {
+                if (!job.Contains("_id") || !job.Contains("Success"))
+                {
+                    throw new ArgumentException("There is an invalid row in the Mongo Database");
+                }
+
+                int jobId = job["_id"].AsInt32;
+
+                bool isSuccessful = job["Success"].AsBoolean;
+
+                JobReport report = new JobReport()
+                {
+                    Id = jobId,
+                    Success = isSuccessful
+                };
+
+                if (job.Contains("EndDate") && job["EndDate"].IsValidDateTime)
+                {
+                    report.EndDate = job["EndDate"].AsDateTime;
+                }
+                else
+                {
+                    report.EndDate = DateTime.Now;
+                }
+
+                if (job.Contains("KillCount"))
+                {
+                    report.KillCount = job["KillCount"].AsInt32;
+                }
+
+                reports.Add(report);
+            }
+            return reports;
         }
 
-        private static void ExportCollectionToMSSQLServer(MongoCollection<BsonDocument> collection)
+        private static MongoDatabase GetMongoDatabase(string connectionString)
         {
-            throw new NotImplementedException();
+            return new MongoClient(connectionString).GetServer().GetDatabase("NinjasFactoryDB");
         }
     }
 }

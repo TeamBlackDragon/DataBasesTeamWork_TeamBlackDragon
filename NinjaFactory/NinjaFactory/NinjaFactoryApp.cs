@@ -2,6 +2,8 @@
 using NinjaFactory.Imports;
 using NinjaFactory.XMLReporting;
 using System;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -50,8 +52,7 @@ namespace NinjaFactory
                 ExcelImport.ExtractFile(filePath, directoryOfExtractedFiles);
                 ExcelImport.ProcessExcelFiles(directoryOfExtractedFiles, pattern, db);
 
-                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-                //throw new NotImplementedException("Not Implemented");
+                Directory.Delete(directoryOfExtractedFiles, true);
             }
         }
 
@@ -146,6 +147,7 @@ namespace NinjaFactory
                 INinjaFactoryData db = this.DB;
                 XmlLostNinjaReportCreator creator = new XmlLostNinjaReportCreator();
                 creator.CreateLostNinjasReport(db, filePath);
+                MessageBox.Show("Done");
             }
         }
 
@@ -157,7 +159,9 @@ namespace NinjaFactory
         /// <exception cref="System.NotImplementedException"> Not Implemented </exception>
         private void GetReportsAndFinalizeOrders(object sender, EventArgs e)
         {
-            throw new NotImplementedException("Not Implemented");
+            INinjaFactoryData db = this.DB;
+            MongoDBImport.InsertMongoDbReportsInDatabse(db);
+            MessageBox.Show("Done");
         }
 
         /// <summary>
@@ -201,6 +205,7 @@ namespace NinjaFactory
 
                 XmlLostNinjaReportParser reportParser = new XmlLostNinjaReportParser();
                 reportParser.DeleteNinjasMentionedInLostNinjaReport(db, filePath);
+                MessageBox.Show("Done");
             }
         }
     }
