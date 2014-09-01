@@ -9,7 +9,7 @@
         public decimal Price { get; set; }
         public string SpecialtyName { get; set; }
         public int JobsCount { get; set; }
-        public int SuccessfullJobsCount { get; set; }
+        public int SuccessfulJobsCount { get; set; }
         public double SuccessRate { get; set; }
 
     }
