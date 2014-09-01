@@ -1,15 +1,15 @@
 ﻿namespace NinjaFactory.Imports
 {
-    using MongoDB.Bson;
-    using MongoDB.Driver;
-    using MongoDB.Driver.Builders;
-    using NinjaFactory.DataBase;
     using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Data.Linq;
     using System.Linq;
     using System.Windows.Forms;
+    using MongoDB.Bson;
+    using MongoDB.Driver;
+    using MongoDB.Driver.Builders;
+    using NinjaFactory.DataBase;
 
     public class MongoDBImport
     {
@@ -54,19 +54,26 @@
         {
             var mongoDatabase = GetMongoDatabase(connectionString);
             var mongoCollection = mongoDatabase.GetCollection("jobs");
-
-            // -------------------------------------------------------------
-            // This code is for testing
-            ClearRecords(mongoCollection);
-            int addedCount = AddSomeRecords(mongoCollection, db);
-            MessageBox.Show(string.Format("Removed all rows in the Mongo table, and added {0} valid rows for testing.", addedCount));
-
-            // -------------------------------------------------------------
-
             var reports = GetAllRecordsInCollection(mongoCollection);
             ExportCollectionToDataBase(reports, db);
 
             ClearRecords(mongoCollection);
+        }
+
+        public static void SetMongoDBForTesting(INinjaFactoryData db)
+        {
+            var con = ConfigurationManager.ConnectionStrings["NinjaFactoryMongoDB"];
+            var conStr = con.ConnectionString;
+            SetMongoDBForTesting(conStr, db);
+        }
+
+        public static void SetMongoDBForTesting(string connectionString, INinjaFactoryData db)
+        {
+            var mongoDatabase = GetMongoDatabase(connectionString);
+            var mongoCollection = mongoDatabase.GetCollection("jobs");
+            ClearRecords(mongoCollection);
+            int addedCount = AddSomeRecords(mongoCollection, db);
+            MessageBox.Show(string.Format("Removed all rows in the Mongo table, and added {0} [valid] rows for testing.", addedCount));
         }
 
         private static void AddNewEntityToCollection(MongoCollection<BsonDocument> collection, JobReport newEntity)
@@ -183,7 +190,7 @@
 
                 if (job.Contains("EndDate") && job["EndDate"].IsValidDateTime)
                 {
-                    report.EndDate = job["EndDate"].AsDateTime;
+                    report.EndDate = job["EndDate"].ToUniversalTime();
                 }
                 else
                 {

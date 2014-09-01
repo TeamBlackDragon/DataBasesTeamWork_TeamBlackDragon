@@ -37,6 +37,7 @@
             this.CreateNinjaCatalogueButton = new System.Windows.Forms.Button();
             this.CreateIncomeReportButton = new System.Windows.Forms.Button();
             this.CreateNinjaRankingRaportButton = new System.Windows.Forms.Button();
+            this.SetMongoDbForTestingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddNewOrdersButton
@@ -119,12 +120,23 @@
             this.CreateNinjaRankingRaportButton.UseVisualStyleBackColor = true;
             this.CreateNinjaRankingRaportButton.Click += new System.EventHandler(this.CreateNinjaRankingRaport);
             // 
+            // SetMongoDbForTestingButton
+            // 
+            this.SetMongoDbForTestingButton.Location = new System.Drawing.Point(12, 236);
+            this.SetMongoDbForTestingButton.Name = "SetMongoDbForTestingButton";
+            this.SetMongoDbForTestingButton.Size = new System.Drawing.Size(175, 37);
+            this.SetMongoDbForTestingButton.TabIndex = 8;
+            this.SetMongoDbForTestingButton.Text = "Fill MongoDB for testing";
+            this.SetMongoDbForTestingButton.UseVisualStyleBackColor = true;
+            this.SetMongoDbForTestingButton.Click += new System.EventHandler(this.SetMongoDbForTesting);
+            // 
             // NinjaFactoryApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(804, 543);
+            this.Controls.Add(this.SetMongoDbForTestingButton);
             this.Controls.Add(this.CreateNinjaRankingRaportButton);
             this.Controls.Add(this.CreateIncomeReportButton);
             this.Controls.Add(this.CreateNinjaCatalogueButton);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.Button CreateNinjaCatalogueButton;
         private System.Windows.Forms.Button CreateIncomeReportButton;
         private System.Windows.Forms.Button CreateNinjaRankingRaportButton;
+        private System.Windows.Forms.Button SetMongoDbForTestingButton;
     }
 }
 

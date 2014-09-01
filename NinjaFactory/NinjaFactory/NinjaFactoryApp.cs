@@ -1,21 +1,21 @@
-﻿using NinjaFactory.DataBase;
-using NinjaFactory.Imports;
-using NinjaFactory.XMLReporting;
-using System;
+﻿using System;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using NinjaFactory.DataBase;
+using NinjaFactory.Imports;
+using NinjaFactory.XMLReporting;
 
 namespace NinjaFactory
 {
     /// <summary>
-    ///    Every ninja fabricator should buy this!
+    /// Every ninja fabricator should buy this!
     /// </summary>
     public partial class NinjaFactoryApp : Form
     {
         /// <summary>
-        ///    Initializes a new instance of the <see cref="NinjaFactoryApp" /> class.
+        /// Initializes a new instance of the <see cref="NinjaFactoryApp" /> class.
         /// </summary>
         public NinjaFactoryApp()
         {
@@ -24,13 +24,13 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Gets or sets the database.
+        /// Gets or sets the database.
         /// </summary>
         /// <value> The database. </value>
         private INinjaFactoryData DB { get; set; }
 
         /// <summary>
-        ///    Adds the new orders.
+        /// Adds the new orders.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -57,7 +57,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Creates the income report.
+        /// Creates the income report.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -81,7 +81,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Creates the ninja catalogue.
+        /// Creates the ninja catalogue.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -105,7 +105,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Creates the ninja ranking raport.
+        /// Creates the ninja ranking raport.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -129,7 +129,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Creates the report for lost ninjas.
+        /// Creates the report for lost ninjas.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -152,7 +152,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Gets the reports and finalize orders.
+        /// Gets the reports and finalize orders.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -165,7 +165,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Creates the backup.
+        /// Creates the backup.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -187,7 +187,7 @@ namespace NinjaFactory
         }
 
         /// <summary>
-        ///    Removes the lost ninjas.
+        /// Removes the lost ninjas.
         /// </summary>
         /// <param name="sender"> The sender. </param>
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
@@ -207,6 +207,16 @@ namespace NinjaFactory
                 reportParser.DeleteNinjasMentionedInLostNinjaReport(db, filePath);
                 MessageBox.Show("Done");
             }
+        }
+
+        /// <summary>
+        /// Sets the mongo database for testing.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
+        private void SetMongoDbForTesting(object sender, EventArgs e)
+        {
+            MongoDBImport.SetMongoDBForTesting(this.DB);
         }
     }
 }
