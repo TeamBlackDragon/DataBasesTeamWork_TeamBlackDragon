@@ -96,6 +96,10 @@
       <Project>{65a8cc3c-7557-4556-a717-a18b44200dc8}</Project>
       <Name>NinjaFactory.Imports</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NinjaFactory.NinjaCatalogue\NinjaFactory.NinjaCatalogue.csproj">
+      <Project>{93bcf890-a9fe-41be-8607-a88e9c52dd52}</Project>
+      <Name>NinjaFactory.NinjaCatalogue</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NinjaFactory.XMLReporting\NinjaFactory.XMLReporting.csproj">
       <Project>{369de656-b56a-4a78-8edb-a0926c1ead74}</Project>
       <Name>NinjaFactory.XMLReporting</Name>

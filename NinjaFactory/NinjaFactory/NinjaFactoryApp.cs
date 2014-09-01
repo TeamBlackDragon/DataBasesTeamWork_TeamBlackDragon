@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using NinjaFactory.DataBase;
 using NinjaFactory.Imports;
+using NinjaFactory.NinjaCatalogue;
 using NinjaFactory.XMLReporting;
 
 namespace NinjaFactory
@@ -98,9 +99,8 @@ namespace NinjaFactory
                 string filePath = saveFileDialog.FileName;
                 INinjaFactoryData db = this.DB;
 
-                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-
-                throw new NotImplementedException("Not Implemented");
+                NinjaCatalogueCreator creator = new NinjaCatalogueCreator();
+                creator.CreateJson(db, filePath);
             }
         }
 

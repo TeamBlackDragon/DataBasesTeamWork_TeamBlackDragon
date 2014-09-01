@@ -22,3 +22,14 @@ D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\
 D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
 D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
 D:\git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
