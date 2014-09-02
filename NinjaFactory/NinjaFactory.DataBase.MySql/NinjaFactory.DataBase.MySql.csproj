@@ -46,7 +46,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
-    <Compile Include="Ninjafactorycatalogueitem.generated.cs">
+    <Compile Include="Ninja_catalogue_item.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,70 +10,81 @@ namespace NinjaFactory.NinjaCatalogue
 {
     public class JsonToMySqlImporter
     {
-        public JsonToMySqlImporter(NinjaCatalogueModel mySqlContext, NinjaCatalogueJsonParser parser)
-        {
-            this.parser = parser;
-            this.mySqlContext = mySqlContext;
-        }
-
         public JsonToMySqlImporter(NinjaCatalogueModel mySqlContext)
         {
-            this.catalogue = catalogue;
             this.mySqlContext = mySqlContext;
         }
 
         public int Run(NinjaCatalogueItem[] catalogue)
         {
-            this.catalogue = catalogue;
-            this.ClearMySqlRecords();
+            this.Catalogue = catalogue;
+            this.SetAllNinjasToDeleted();
             this.LoadToMySql();
             return this.catalogue.Length;
         }
 
-        public int Run(string filePath)
+        public int Run(string filePath, NinjaCatalogueJsonParser parser)
         {
+            this.parser = parser;
             this.ReadJsonFile(filePath);
-            this.ClearMySqlRecords();
+            this.SetAllNinjasToDeleted();
             this.LoadToMySql();
             return this.catalogue.Length;
         }
 
         private readonly NinjaCatalogueModel mySqlContext;
-        private readonly NinjaCatalogueJsonParser parser;
-        private NinjaCatalogueItem[] catalogue;
+        private Ninja_catalogue_item[] catalogue;
+        private NinjaCatalogueJsonParser parser;
 
-        private void ClearMySqlRecords()
+        private NinjaCatalogueItem[] Catalogue
         {
-            var prevNinjas = this.mySqlContext.Ninjafactorycatalogueitems.Where(n => n.IsDeleted.HasValue == true && n.IsDeleted.Value == false);
-            foreach (var item in prevNinjas)
+            set
             {
-                item.IsDeleted = true;
+                this.catalogue = value.Select(nin => new Ninja_catalogue_item()
+                {
+                    IsDeleted = false,
+                    CentralID = nin.NinjaId,
+                    Name = nin.Name,
+                    KillCount = nin.KillCount,
+                    Weapon = nin.Weapon,
+                    Price = (float)nin.Price,
+                    Speciality = nin.SpecialtyName,
+                    JobsCount = nin.JobsCount,
+                    SuccessfulJobsCount = nin.SuccessfulJobsCount,
+                    SuccessRate = nin.SuccessRate
+                }).ToArray();
             }
         }
 
         private void LoadToMySql()
         {
-            for (int i = 0; i < this.catalogue.Length; i++)
+            foreach (var updatedNinja in this.catalogue)
             {
-                this.mySqlContext.Add(new Ninjafactorycatalogueitem()
+                var ninjaToUpdate = this.mySqlContext.Ninja_catalogue_items.FirstOrDefault(n => n.CentralID == updatedNinja.CentralID);
+                if (ninjaToUpdate != null)
                 {
-                    IsDeleted = false,
-                    NinjaName = catalogue[i].Name,
-                    KillCount = catalogue[i].KillCount,
-                    Weapon = catalogue[i].Weapon,
-                    Price = (double)catalogue[i].Price,
-                    Speciality = catalogue[i].SpecialtyName,
-                    JobsCount = catalogue[i].JobsCount,
-                    SuccessfulJobsCount = catalogue[i].SuccessfulJobsCount,
-                    SuccessRate = catalogue[i].SuccessRate
-                });
+                    ninjaToUpdate = updatedNinja;
+                }
+                else
+                {
+                    this.mySqlContext.Add(updatedNinja);
+                }
             }
             this.mySqlContext.SaveChanges();
         }
 
         private void ReadJsonFile(string filePath)
         {
-            this.catalogue = this.parser.Parse(filePath);
+            this.Catalogue = this.parser.Parse(filePath);
+        }
+
+        private void SetAllNinjasToDeleted()
+        {
+            foreach (var item in this.mySqlContext.Ninja_catalogue_items)
+            {
+                item.IsDeleted = true;
+            }
+            this.mySqlContext.SaveChanges();
         }
     }
 }

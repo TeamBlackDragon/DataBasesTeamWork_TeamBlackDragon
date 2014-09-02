@@ -2,8 +2,8 @@
 <DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="NinjaCatalogueModel" namespace="NinjaFactory.DataBase.MySql" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
   <orm:orm name="NinjaCatalogueModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
     <orm:namespace name="NinjaFactory.DataBase.MySql" default="true">
-      <orm:class name="Ninjafactorycatalogueitem" uniqueId="ad410ab1-9594-4fec-89d9-f28b854670b4">
-        <orm:table name="ninjafactorycatalogueitems" />
+      <orm:class name="Ninja_catalogue_item" uniqueId="5e4e2581-c1d0-40c7-ad1a-831feab5cd44">
+        <orm:table name="ninja_catalogue_item" />
         <orm:identity>
           <orm:key-generator name="autoinc">
             <orm:key-generator-member property-name="Id" />
@@ -11,42 +11,51 @@
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:concurrency strategy="changed" />
-        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="d666460a-48a9-458d-ad86-d528396cac06" type="System.Int32">
+        <orm:field name="_id" property="Id" behavior="readwrite" uniqueId="4d144457-cacc-44ed-9871-7bda80fe5e15" type="System.Int32">
           <orm:column name="Id" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_ninjaName" property="NinjaName" behavior="readwrite" uniqueId="561d388b-ed07-4605-bd84-118e403263a8" type="System.String">
-          <orm:column name="NinjaName" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:field name="_centralID" property="CentralID" behavior="readwrite" uniqueId="7abcea19-6551-4e27-9715-bc9cdeef0e56" type="System.Int32">
+          <orm:column name="CentralID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_killCount" property="KillCount" behavior="readwrite" uniqueId="d9b1b4a9-c7e6-4a96-a9bd-7a39fdca7007" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="ee490646-4155-41b4-99f5-365d03419d49" type="System.String">
+          <orm:column name="Name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_killCount" property="KillCount" behavior="readwrite" uniqueId="4953b61d-9a0b-4535-86df-00d80efbb2ea" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="KillCount" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_weapon" property="Weapon" behavior="readwrite" uniqueId="e26945bc-3ed3-48fb-8ab1-5f3b3e3de04e" type="System.String">
+        <orm:field name="_weapon" property="Weapon" behavior="readwrite" uniqueId="760ace44-bb36-4050-b5db-3ee816d3c1c8" type="System.String">
           <orm:column name="Weapon" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
-        <orm:field name="_price" property="Price" behavior="readwrite" uniqueId="59672594-fb71-4af6-9c4a-c0e298ecbaba" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_price" property="Price" behavior="readwrite" uniqueId="c28b00d3-5b75-48db-84c6-45ddefb6b47c" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="Price" sql-type="double" nullable="true" length="0" scale="0" ado-type="Double" />
         </orm:field>
-        <orm:field name="_speciality" property="Speciality" behavior="readwrite" uniqueId="1543d9c8-b9d0-4c05-b9df-eaf4a15f84d3" type="System.String">
+        <orm:field name="_speciality" property="Speciality" behavior="readwrite" uniqueId="28f8419b-abd0-4d62-bf57-dbe17905077f" type="System.String">
           <orm:column name="Speciality" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
-        <orm:field name="_jobsCount" property="JobsCount" behavior="readwrite" uniqueId="33b04c29-3380-491a-9992-c6dd66b7c26a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_jobsCount" property="JobsCount" behavior="readwrite" uniqueId="874bf4a1-441b-4334-8dee-d5310f141d38" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="JobsCount" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_successfulJobsCount" property="SuccessfulJobsCount" behavior="readwrite" uniqueId="ab413113-76ba-4370-8232-c90f73e63584" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_successfulJobsCount" property="SuccessfulJobsCount" behavior="readwrite" uniqueId="96275982-ab7b-4767-b99a-0d052d23cf15" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="SuccessfulJobsCount" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_successRate" property="SuccessRate" behavior="readwrite" uniqueId="114cfa31-a53c-4aa1-9a93-d9a56b06895b" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_successRate" property="SuccessRate" behavior="readwrite" uniqueId="20765a96-7c64-4a9c-a91e-a2239c199b23" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="SuccessRate" sql-type="double" nullable="true" length="0" scale="0" ado-type="Double" />
         </orm:field>
-        <orm:field name="_isDeleted" property="IsDeleted" behavior="readwrite" uniqueId="80dbd7c4-eb93-4955-b270-8e69156f673a" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+        <orm:field name="_isDeleted" property="IsDeleted" behavior="readwrite" uniqueId="d8f6da1b-b943-4d8a-8675-bbdf13f61f01" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="IsDeleted" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
+        <orm:index name="CentralID_UNIQUE" unique="true">
+          <orm:columnMapping>
+            <orm:column name="CentralID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
     </orm:namespace>
     <orm:schema schema="">
-      <orm:table name="ninjafactorycatalogueitems">
+      <orm:table name="ninja_catalogue_item">
         <orm:column name="Id" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
-        <orm:column name="NinjaName" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CentralID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Name" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="KillCount" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="Weapon" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Price" sql-type="double" nullable="true" length="0" scale="0" ado-type="Double" />
@@ -55,6 +64,11 @@
         <orm:column name="SuccessfulJobsCount" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="SuccessRate" sql-type="double" nullable="true" length="0" scale="0" ado-type="Double" />
         <orm:column name="IsDeleted" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:index name="CentralID_UNIQUE" unique="true">
+          <orm:columnMapping>
+            <orm:column name="CentralID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:table>
     </orm:schema>
     <orm:relational-naming-settings>
@@ -63,8 +77,8 @@
     </orm:relational-naming-settings>
   </orm:orm>
   <ModelSettings xmlns="">
-    <AppConfigConnectionPropertyName>MySqlConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>Server=127.0.0.1;Database=ninjafactorycatalogue;Uid=root;Pwd=;</AppConfigConnectionString>
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Server=127.0.0.1;Database=ninja_catalogue;Uid=root;Pwd=;</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -77,9 +91,7 @@
       <PropertyRules>
         <CaseMode>PascalCase</CaseMode>
       </PropertyRules>
-      <NavigationPropertyRules>
-        <IsPrefixSuffixEnabled>false</IsPrefixSuffixEnabled>
-      </NavigationPropertyRules>
+      <NavigationPropertyRules />
     </NamingSettings>
     <CodeGenerationSettings>
       <MappingDefinitionType>Xml</MappingDefinitionType>
@@ -93,23 +105,24 @@
     </BackendConfigurationSettings>
   </ModelSettings>
   <Types>
-    <DomainClass Id="ad410ab1-9594-4fec-89d9-f28b854670b4" name="Ninjafactorycatalogueitem" namespace="NinjaFactory.DataBase.MySql" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
-      <Property Id="d666460a-48a9-458d-ad86-d528396cac06" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
-      <Property Id="80dbd7c4-eb93-4955-b270-8e69156f673a" name="IsDeleted" type="Boolean" label="IsDeleted : Boolean" nullable="true" kind="Persistent" fieldName="_isDeleted" />
-      <Property Id="33b04c29-3380-491a-9992-c6dd66b7c26a" name="JobsCount" type="Int32" label="JobsCount : Int32" nullable="true" kind="Persistent" fieldName="_jobsCount" />
-      <Property Id="d9b1b4a9-c7e6-4a96-a9bd-7a39fdca7007" name="KillCount" type="Int32" label="KillCount : Int32" nullable="true" kind="Persistent" fieldName="_killCount" />
-      <Property Id="561d388b-ed07-4605-bd84-118e403263a8" name="NinjaName" label="NinjaName : String" kind="Persistent" fieldName="_ninjaName" />
-      <Property Id="59672594-fb71-4af6-9c4a-c0e298ecbaba" name="Price" type="Double" label="Price : Double" nullable="true" kind="Persistent" fieldName="_price" />
-      <Property Id="1543d9c8-b9d0-4c05-b9df-eaf4a15f84d3" name="Speciality" label="Speciality : String" kind="Persistent" fieldName="_speciality" />
-      <Property Id="ab413113-76ba-4370-8232-c90f73e63584" name="SuccessfulJobsCount" type="Int32" label="SuccessfulJobsCount : Int32" nullable="true" kind="Persistent" fieldName="_successfulJobsCount" />
-      <Property Id="114cfa31-a53c-4aa1-9a93-d9a56b06895b" name="SuccessRate" type="Double" label="SuccessRate : Double" nullable="true" kind="Persistent" fieldName="_successRate" />
-      <Property Id="e26945bc-3ed3-48fb-8ab1-5f3b3e3de04e" name="Weapon" label="Weapon : String" kind="Persistent" fieldName="_weapon" />
+    <DomainClass Id="5e4e2581-c1d0-40c7-ad1a-831feab5cd44" name="Ninja_catalogue_item" namespace="NinjaFactory.DataBase.MySql" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="4d144457-cacc-44ed-9871-7bda80fe5e15" name="Id" type="Int32" label="Id : Int32" kind="Persistent" identity="true" fieldName="_id" />
+      <Property Id="7abcea19-6551-4e27-9715-bc9cdeef0e56" name="CentralID" type="Int32" label="CentralID : Int32" kind="Persistent" fieldName="_centralID" />
+      <Property Id="d8f6da1b-b943-4d8a-8675-bbdf13f61f01" name="IsDeleted" type="Boolean" label="IsDeleted : Boolean" nullable="true" kind="Persistent" fieldName="_isDeleted" />
+      <Property Id="874bf4a1-441b-4334-8dee-d5310f141d38" name="JobsCount" type="Int32" label="JobsCount : Int32" nullable="true" kind="Persistent" fieldName="_jobsCount" />
+      <Property Id="4953b61d-9a0b-4535-86df-00d80efbb2ea" name="KillCount" type="Int32" label="KillCount : Int32" nullable="true" kind="Persistent" fieldName="_killCount" />
+      <Property Id="ee490646-4155-41b4-99f5-365d03419d49" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="c28b00d3-5b75-48db-84c6-45ddefb6b47c" name="Price" type="Double" label="Price : Double" nullable="true" kind="Persistent" fieldName="_price" />
+      <Property Id="28f8419b-abd0-4d62-bf57-dbe17905077f" name="Speciality" label="Speciality : String" kind="Persistent" fieldName="_speciality" />
+      <Property Id="96275982-ab7b-4767-b99a-0d052d23cf15" name="SuccessfulJobsCount" type="Int32" label="SuccessfulJobsCount : Int32" nullable="true" kind="Persistent" fieldName="_successfulJobsCount" />
+      <Property Id="20765a96-7c64-4a9c-a91e-a2239c199b23" name="SuccessRate" type="Double" label="SuccessRate : Double" nullable="true" kind="Persistent" fieldName="_successRate" />
+      <Property Id="760ace44-bb36-4050-b5db-3ee816d3c1c8" name="Weapon" label="Weapon : String" kind="Persistent" fieldName="_weapon" />
     </DomainClass>
   </Types>
   <domainContext>
-    <domainModelHasDomainContext Id="6b163c46-0b70-443c-bbe1-d62d90d73700">
+    <domainModelHasDomainContext Id="6cfc339c-2b23-40ed-a60b-d0364f60a823">
       <domainContainer name="NinjaCatalogueModel" namespace="NinjaFactory.DataBase.MySql" showPropertiesCompartment="true">
-        <entitySetProperty name="Ninjafactorycatalogueitems" namespace="NinjaFactory.DataBase.MySql" type="Ninjafactorycatalogueitem" label="Ninjafactorycatalogueitems : IQueryable&lt;NinjaFactory.DataBase.MySql.Ninjafactorycatalogueitem&gt;" />
+        <entitySetProperty name="Ninja_catalogue_items" namespace="NinjaFactory.DataBase.MySql" type="Ninja_catalogue_item" label="Ninja_catalogue_items : IQueryable&lt;NinjaFactory.DataBase.MySql.Ninja_catalogue_item&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>

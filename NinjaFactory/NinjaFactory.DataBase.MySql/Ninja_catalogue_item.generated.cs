@@ -21,7 +21,7 @@ using Telerik.OpenAccess.Metadata.Fluent.Advanced;
 
 namespace NinjaFactory.DataBase.MySql	
 {
-	public partial class Ninjafactorycatalogueitem
+	public partial class Ninja_catalogue_item
 	{
 		private int _id;
 		public virtual int Id
@@ -36,16 +36,29 @@ namespace NinjaFactory.DataBase.MySql
 			}
 		}
 		
-		private string _ninjaName;
-		public virtual string NinjaName
+		private int _centralID;
+		public virtual int CentralID
 		{
 			get
 			{
-				return this._ninjaName;
+				return this._centralID;
 			}
 			set
 			{
-				this._ninjaName = value;
+				this._centralID = value;
+			}
+		}
+		
+		private string _name;
+		public virtual string Name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				this._name = value;
 			}
 		}
 		

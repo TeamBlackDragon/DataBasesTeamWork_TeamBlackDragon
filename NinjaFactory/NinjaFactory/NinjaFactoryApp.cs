@@ -189,8 +189,8 @@ namespace NinjaFactory
                 string filePath = openFileDialog.FileName;
                 NinjaCatalogueModel mySqlDb = this.MySqlDb;
 
-                JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb, new NinjaCatalogueJsonParser());
-                var recordCount = importer.Run(filePath);
+                JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb);
+                var recordCount = importer.Run(filePath, new NinjaCatalogueJsonParser());
                 MessageBox.Show("Loaded " + recordCount + " records.");
             }
         }

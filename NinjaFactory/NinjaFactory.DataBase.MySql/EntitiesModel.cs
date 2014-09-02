@@ -24,7 +24,7 @@ namespace NinjaFactory.DataBase.MySql
 {
 	public partial class NinjaCatalogueModel : OpenAccessContext, INinjaCatalogueModelUnitOfWork
 	{
-		private static string connectionStringName = @"MySqlConnection";
+		private static string connectionStringName = @"Connection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
@@ -50,11 +50,11 @@ namespace NinjaFactory.DataBase.MySql
 			:base(connection, backendConfiguration, metadataSource)
 		{ }
 			
-		public IQueryable<Ninjafactorycatalogueitem> Ninjafactorycatalogueitems 
+		public IQueryable<Ninja_catalogue_item> Ninja_catalogue_items 
 		{
 			get
 			{
-				return this.GetAll<Ninjafactorycatalogueitem>();
+				return this.GetAll<Ninja_catalogue_item>();
 			}
 		}
 		
@@ -79,7 +79,7 @@ namespace NinjaFactory.DataBase.MySql
 	
 	public interface INinjaCatalogueModelUnitOfWork : IUnitOfWork
 	{
-		IQueryable<Ninjafactorycatalogueitem> Ninjafactorycatalogueitems
+		IQueryable<Ninja_catalogue_item> Ninja_catalogue_items
 		{
 			get;
 		}
