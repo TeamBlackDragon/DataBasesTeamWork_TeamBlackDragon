@@ -15,22 +15,7 @@
         /// <param name="filePath"> the path to the output file containing json report </param>
         public void CreateJson(INinjaFactoryData db, string filePath)
         {
-            var ninjaItems = db.Ninjas
-                .Where(n => n.Jobs.Where(j => j.IsSuccessfull.HasValue == false).Count() == 0)
-                .Select(n =>
-                    new NinjaCatalogueItem()
-                    {
-                        NinjaId = n.Id,
-                        Name = n.Name,
-                        KillCount = n.KillCount,
-                        Weapon = n.WeaponOfChoice,
-                        Price = n.MinimalPersonalPrice + n.Speciality.MinimalCompanyPrice,
-                        SpecialtyName = n.Speciality.Name,
-                        JobsCount = n.Jobs.Count(),
-                        SuccessfulJobsCount = n.Jobs.Where(j => j.IsSuccessfull.HasValue == true && j.IsSuccessfull.Value == true).Count(),
-                        SuccessRate = 0
-                    })
-                .ToList();
+            var ninjaItems = GetNinjaCatalogueFromDb(db);
 
             foreach (var item in ninjaItems)
             {
@@ -44,7 +29,27 @@
 
             FileStream fileStream = new FileStream(filePath, FileMode.Create);
 
-            jsonSerializer.WriteObject(fileStream, ninjaItems.ToArray());
+            jsonSerializer.WriteObject(fileStream, ninjaItems);
+        }
+
+        public NinjaCatalogueItem[] GetNinjaCatalogueFromDb(INinjaFactoryData db)
+        {
+            var ninjaItems = db.Ninjas
+                               .Where(n => n.Jobs.Where(j => j.IsSuccessfull.HasValue == false).Count() == 0)
+                               .Select(n => new NinjaCatalogueItem()
+                                      {
+                                          NinjaId = n.Id,
+                                          Name = n.Name,
+                                          KillCount = n.KillCount,
+                                          Weapon = n.WeaponOfChoice,
+                                          Price = n.MinimalPersonalPrice + n.Speciality.MinimalCompanyPrice,
+                                          SpecialtyName = n.Speciality.Name,
+                                          JobsCount = n.Jobs.Count(),
+                                          SuccessfulJobsCount = n.Jobs.Where(j => j.IsSuccessfull.HasValue == true && j.IsSuccessfull.Value == true).Count(),
+                                          SuccessRate = 0
+                                      })
+                               .ToArray();
+            return ninjaItems;
         }
     }
 }

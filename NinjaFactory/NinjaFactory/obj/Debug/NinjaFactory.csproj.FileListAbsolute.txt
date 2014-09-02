@@ -82,3 +82,11 @@ D:\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\
 D:\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.NinjaFactoryApp.resources
 D:\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.Properties.Resources.resources
 D:\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\obj\Debug\NinjaFactory.csproj.GenerateResource.Cache
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.NinjaCatalogue.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.NinjaCatalogue.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.DataBase.MySql.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.DataBase.MySql.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\Telerik.OpenAccess.40.Extensions.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\Telerik.OpenAccess.40.Extensions.xml

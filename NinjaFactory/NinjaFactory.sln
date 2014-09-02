@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory", "NinjaFactory\NinjaFactory.csproj", "{E3F278EA-8295-4DAA-AF34-E810A8FCCC65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.XMLReporting", "NinjaFactory.XMLReporting\NinjaFactory.XMLReporting.csproj", "{369DE656-B56A-4A78-8EDB-A0926C1EAD74}"
@@ -12,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.Imports", "NinjaFactory.Imports\NinjaFactory.Imports.csproj", "{65A8CC3C-7557-4556-A717-A18B44200DC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.NinjaCatalogue", "NinjaFactory.NinjaCatalogue\NinjaFactory.NinjaCatalogue.csproj", "{93BCF890-A9FE-41BE-8607-A88E9C52DD52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.DataBase.MySql", "NinjaFactory.DataBase.MySql\NinjaFactory.DataBase.MySql.csproj", "{B1A3EF6D-CA91-4F0F-BA6D-2D11D0E97185}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,10 @@ Global
 		{93BCF890-A9FE-41BE-8607-A88E9C52DD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93BCF890-A9FE-41BE-8607-A88E9C52DD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93BCF890-A9FE-41BE-8607-A88E9C52DD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A3EF6D-CA91-4F0F-BA6D-2D11D0E97185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A3EF6D-CA91-4F0F-BA6D-2D11D0E97185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A3EF6D-CA91-4F0F-BA6D-2D11D0E97185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A3EF6D-CA91-4F0F-BA6D-2D11D0E97185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using NinjaFactory.DataBase;
+using NinjaFactory.DataBase.MySql;
 using NinjaFactory.Imports;
 using NinjaFactory.NinjaCatalogue;
 using NinjaFactory.XMLReporting;
@@ -22,7 +23,13 @@ namespace NinjaFactory
         {
             InitializeComponent();
             this.DB = new NinjasData();
+            this.MySqlDb = new NinjaCatalogueModel();
         }
+
+        /// <summary>
+        /// My SQL database
+        /// </summary>
+        private NinjaCatalogueModel MySqlDb;
 
         /// <summary>
         /// Gets or sets the database.
@@ -54,6 +61,7 @@ namespace NinjaFactory
                 ExcelImport.ProcessExcelFiles(directoryOfExtractedFiles, pattern, db);
 
                 Directory.Delete(directoryOfExtractedFiles, true);
+                MessageBox.Show("Done");
             }
         }
 
@@ -101,6 +109,7 @@ namespace NinjaFactory
 
                 NinjaCatalogueCreator creator = new NinjaCatalogueCreator();
                 creator.CreateJson(db, filePath);
+                MessageBox.Show("Done");
             }
         }
 
@@ -120,10 +129,9 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                INinjaFactoryData db = this.DB;
+                NinjaCatalogueModel mySqlDb = this.MySqlDb;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-
                 throw new NotImplementedException("Not Implemented");
             }
         }
@@ -179,11 +187,26 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                INinjaFactoryData db = this.DB;
+                NinjaCatalogueModel mySqlDb = this.MySqlDb;
 
-                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-                throw new NotImplementedException("Not Implemented");
+                JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb, new NinjaCatalogueJsonParser());
+                var recordCount = importer.Run(filePath);
+                MessageBox.Show("Loaded " + recordCount + " records.");
             }
+        }
+
+        /// <summary>
+        /// Loads the ninja catalogue to my SQL directly.
+        /// </summary>
+        /// <param name="sender"> The sender. </param>
+        /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
+        private void LoadNinjaCatalogueToMySqlDirectly(object sender, EventArgs e)
+        {
+            NinjaCatalogueModel mySqlDb = this.MySqlDb;
+            JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb);
+            var catalogue = new NinjaCatalogueCreator().GetNinjaCatalogueFromDb(this.DB);
+            int recordCount = importer.Run(catalogue);
+            MessageBox.Show("Loaded " + recordCount + " records.");
         }
 
         /// <summary>
