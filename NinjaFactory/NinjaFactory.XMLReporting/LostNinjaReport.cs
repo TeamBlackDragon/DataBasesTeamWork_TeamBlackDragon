@@ -1,7 +1,7 @@
-using NinjaFactory.DataBase;
-
 namespace NinjaFactory.XMLReporting
 {
+    using NinjaFactory.DataBase;
+
     /// <summary>
     /// A report for a ninja that has probably died in a mission
     /// </summary>

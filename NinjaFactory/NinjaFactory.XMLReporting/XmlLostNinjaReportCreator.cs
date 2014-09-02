@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using NinjaFactory.DataBase;
-
-namespace NinjaFactory.XMLReporting
+﻿namespace NinjaFactory.XMLReporting
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using System.Xml.Linq;
+    using NinjaFactory.DataBase;
+
     /// <summary>
     /// Creates lost ninja reports as XML files
     /// </summary>
@@ -27,8 +27,8 @@ namespace NinjaFactory.XMLReporting
 
             IEnumerable<LostNinjaReport> oldUnfinishedJobs;
 
-            oldUnfinishedJobs = SelectOldUnfinishedJobs(db, startedBefore);
-            WriteToFile(oldUnfinishedJobs, filePath);
+            oldUnfinishedJobs = this.SelectOldUnfinishedJobs(db, startedBefore);
+            this.WriteToFile(oldUnfinishedJobs, filePath);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NinjaFactory.XMLReporting
         /// </summary>
         /// <param name="db"> The database. </param>
         /// <param name="startedBefore"> The started before. </param>
-        /// <returns> </returns>
+        /// <returns> IEnumerable collection of all unfinished jobs started before specified date </returns>
         private IEnumerable<LostNinjaReport> SelectOldUnfinishedJobs(INinjaFactoryData db, DateTime startedBefore)
         {
             return db.Jobs.All()

@@ -8,6 +8,11 @@
 
     public class NinjaCatalogueCreator
     {
+        /// <summary>
+        /// Creates a JSON report of ninjas from a database and places it in a file
+        /// </summary>
+        /// <param name="db"> the database to draw infromation from </param>
+        /// <param name="filePath"> the path to the output file containing json report </param>
         public void CreateJson(INinjaFactoryData db, string filePath)
         {
             var ninjaItems = db.Ninjas

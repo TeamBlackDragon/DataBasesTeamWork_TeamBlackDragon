@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using NinjaFactory.DataBase;
-
-namespace NinjaFactory.XMLReporting
+﻿namespace NinjaFactory.XMLReporting
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using System.Xml.Linq;
+    using NinjaFactory.DataBase;
+
     /// <summary>
     /// Reads lost ninja reports and executes the commands in them
     /// </summary>
@@ -23,11 +23,11 @@ namespace NinjaFactory.XMLReporting
         {
             XDocument lostNinjaReports = XDocument.Load(filePath);
 
-            var lostNinjas = GetLostNinjas(lostNinjaReports, db);
+            var lostNinjas = this.GetLostNinjas(lostNinjaReports, db);
 
-            var failedMissions = GetFailedMissions(lostNinjaReports, db);
+            var failedMissions = this.GetFailedMissions(lostNinjaReports, db);
 
-            RemoveFromDataBase(lostNinjas, failedMissions, db);
+            this.RemoveFromDataBase(lostNinjas, failedMissions, db);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace NinjaFactory.XMLReporting
         /// </summary>
         /// <param name="lostNinjaReports"> The lost ninja reports. </param>
         /// <param name="db"> The database. </param>
-        /// <returns> </returns>
+        /// <returns> Queryable collection of all failed missions </returns>
         private IQueryable<Job> GetFailedMissions(XDocument lostNinjaReports, INinjaFactoryData db)
         {
             IEnumerable<int> failedMissionsIds = new List<int>();
@@ -52,7 +52,7 @@ namespace NinjaFactory.XMLReporting
         /// </summary>
         /// <param name="lostNinjaReports"> The lost ninja reports. </param>
         /// <param name="db"> The database. </param>
-        /// <returns> </returns>
+        /// <returns> Queryable collection of all lost ninjas </returns>
         private IQueryable<Ninja> GetLostNinjas(XDocument lostNinjaReports, INinjaFactoryData db)
         {
             IEnumerable<int> lostNinjaIds = new List<int>();
@@ -75,11 +75,13 @@ namespace NinjaFactory.XMLReporting
             {
                 nin.IsDeleted = true;
             }
+
             foreach (Job job in failedMissions)
             {
                 job.IsSuccessfull = false;
                 job.EndDate = DateTime.Now;
             }
+
             db.SaveChanges();
         }
     }
