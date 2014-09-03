@@ -9,6 +9,7 @@
     using NinjaFactory.NinjaCatalogue;
     using NinjaFactory.PDFReporting;
     using NinjaFactory.XMLReporting;
+    using NinjaFactory.ExcelReporting;
 
     /// <summary>
     /// Every ninja fabricator should buy this!
@@ -123,7 +124,7 @@
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-            saveFileDialog.Filter = "Excel files (*.xls)|*.xls";
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
             saveFileDialog.FileName = "NinjaRankingReport";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -131,8 +132,9 @@
                 string filePath = saveFileDialog.FileName;
                 NinjaCatalogueModel mySqlDb = this.mySqlDb;
 
-                // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-                throw new NotImplementedException("Not Implemented");
+                ExcelSuccessRateReportCreator excelCreator = new ExcelSuccessRateReportCreator();
+                excelCreator.CreateSuccessRateReport(mySqlDb, filePath);
+                MessageBox.Show("Done");
             }
         }
 

@@ -48,3 +48,13 @@ C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFacto
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.csprojResolveAssemblyReference.cache
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.dll
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.pdb
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll.config
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.XMLReporting.pdb
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\NinjaFactory.DataBase.pdb
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\bin\Debug\EntityFramework.xml
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.csprojResolveAssemblyReference.cache
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.XMLReporting\obj\Debug\NinjaFactory.XMLReporting.pdb

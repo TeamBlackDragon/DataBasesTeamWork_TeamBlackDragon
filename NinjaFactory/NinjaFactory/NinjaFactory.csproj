@@ -111,6 +111,10 @@
       <Project>{2a500f0b-2784-4fdc-a613-8622b3c4fba1}</Project>
       <Name>NinjaFactory.DataBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NinjaFactory.ExcelReporting\NinjaFactory.ExcelReporting.csproj">
+      <Project>{38490593-02aa-41ee-9e42-7307887b9f9b}</Project>
+      <Name>NinjaFactory.ExcelReporting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NinjaFactory.Imports\NinjaFactory.Imports.csproj">
       <Project>{65a8cc3c-7557-4556-a717-a18b44200dc8}</Project>
       <Name>NinjaFactory.Imports</Name>

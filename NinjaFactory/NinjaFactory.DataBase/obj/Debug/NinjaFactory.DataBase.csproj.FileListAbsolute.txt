@@ -81,3 +81,15 @@ C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFacto
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
