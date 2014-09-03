@@ -235,3 +235,4 @@ D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\Ni
 D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Driver.xml
 D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\MongoDB.Bson.xml
 D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\itextsharp.xml
+D:\Telerik\Databases\Teamwork\FINAL VERSION\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\System.Data.SQLite.dll

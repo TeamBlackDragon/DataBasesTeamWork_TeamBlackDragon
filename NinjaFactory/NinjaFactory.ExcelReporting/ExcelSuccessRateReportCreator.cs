@@ -3,21 +3,46 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Data.SQLite;
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
     using System.IO;
     using System.Drawing;
     using NinjaFactory.DataBase.MySql;
+    using System.Data;
 
     /// <summary>
     /// Creates success rate of ninjas reports as Excel files
     /// </summary>
     public class ExcelSuccessRateReportCreator
     {
+        public const string SQLITE_DATABASE = @"../../../ninja_specialties.sqlite";
+
+        public Dictionary<string, int> LoadSQliteData(string databasePath)
+        {
+            string sqlQuery = "SELECT Specialty, Weight FROM specialties;";
+            var specialties = new Dictionary<string, int>();
+            var connection = new SQLiteConnection("Data Source=" + databasePath + ";Version=3;");
+
+            connection.Open();
+
+            var command = new SQLiteCommand(sqlQuery, connection);
+
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                specialties.Add((string)reader[0], (int)reader[1]);
+            }
+
+            return specialties;
+        }
+
         public void CreateSuccessRateReport(INinjaCatalogueModelUnitOfWork db, string filePath)
         {
-
             IEnumerable<SuccessRateReport> successRateReport;
+
+            //var specialties = this.LoadSQliteData(SQLITE_DATABASE);
 
             successRateReport = this.SelectSuccessRateList(db);
             this.WriteToFile(successRateReport, filePath);
