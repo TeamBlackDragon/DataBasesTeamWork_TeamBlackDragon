@@ -75,7 +75,7 @@
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-            saveFileDialog.FileName = "IncomeReport";
+            saveFileDialog.FileName = "IncomeReports";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -85,7 +85,7 @@
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 PDFIncomeReportCreator pdfCreator = new PDFIncomeReportCreator();
                 pdfCreator.CreatePDFReport(db, filePath);
-                MessageBox.Show("Done");
+                MessageBox.Show("Income reports created successfully!");
             }
         }
 
@@ -109,7 +109,7 @@
 
                 NinjaCatalogueCreator creator = new NinjaCatalogueCreator();
                 creator.CreateJson(db, filePath);
-                MessageBox.Show("Done");
+                MessageBox.Show("Ninjas catalog created successfully!");
             }
         }
 
