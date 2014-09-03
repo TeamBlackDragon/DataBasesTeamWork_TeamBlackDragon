@@ -33,3 +33,39 @@ C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFac
 C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
 C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
 C:\Users\ivossss\Desktop\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\BlackDragon_backup\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb

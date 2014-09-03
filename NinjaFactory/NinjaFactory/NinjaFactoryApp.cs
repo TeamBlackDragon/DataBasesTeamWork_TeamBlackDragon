@@ -8,6 +8,7 @@ using NinjaFactory.DataBase.MySql;
 using NinjaFactory.Imports;
 using NinjaFactory.NinjaCatalogue;
 using NinjaFactory.XMLReporting;
+using NinjaFactory.PDFReporting;
 
 namespace NinjaFactory
 {
@@ -23,7 +24,7 @@ namespace NinjaFactory
         {
             InitializeComponent();
             this.DB = new NinjasData();
-            this.MySqlDb = new NinjaCatalogueModel();
+            //this.MySqlDb = new NinjaCatalogueModel();
         }
 
         /// <summary>
@@ -84,8 +85,9 @@ namespace NinjaFactory
                 INinjaFactoryData db = this.DB;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
-
-                throw new NotImplementedException("Not Implemented");
+                PDFIncomeReportCreator pdfCreator = new PDFIncomeReportCreator();
+                pdfCreator.CreatePDFReport(db, filePath);
+                MessageBox.Show("Done");
             }
         }
 
