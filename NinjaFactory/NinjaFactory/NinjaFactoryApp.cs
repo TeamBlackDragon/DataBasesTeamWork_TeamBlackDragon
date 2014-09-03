@@ -134,7 +134,7 @@
 
                 ExcelSuccessRateReportCreator excelCreator = new ExcelSuccessRateReportCreator();
                 excelCreator.CreateSuccessRateReport(mySqlDb, filePath);
-                MessageBox.Show("NinjaRankingReport report generated!");
+                MessageBox.Show("NinjaRankingReport generated!");
             }
         }
 
