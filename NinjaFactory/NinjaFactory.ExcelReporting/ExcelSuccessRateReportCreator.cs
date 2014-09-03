@@ -2,21 +2,20 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Data.SQLite;
+    using System.Drawing;
+    using System.IO;
+    using System.Linq;
+    using NinjaFactory.DataBase.MySql;
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
-    using System.IO;
-    using System.Drawing;
-    using NinjaFactory.DataBase.MySql;
-    using System.Data;
 
     /// <summary>
     /// Creates success rate of ninjas reports as Excel files
     /// </summary>
     public class ExcelSuccessRateReportCreator
     {
-        //private const string SQLitePath = "Data Source=../../../ninja_specialties.db;Version=3;New=False;Compress=True;";
+        ////private const string SQLitePath = "Data Source=ninja_specialties.db;Version=3;New=False;Compress=True;";
 
         public Dictionary<string, string> LoadSQliteData()
         {
@@ -39,7 +38,6 @@
             }
             catch (Exception exc)
             {
-                
                 throw new ArgumentException(exc.Message);
             }
             
@@ -49,12 +47,12 @@
         public void CreateSuccessRateReport(INinjaCatalogueModelUnitOfWork db, string filePath)
         {
             IEnumerable<NinjaReport> successRateReport;
-            var specialties = LoadSQliteData();
-            successRateReport = SelectSuccessRateList(db, specialties);
-            WriteToFile(successRateReport, filePath); 
+            var specialties = this.LoadSQliteData();
+            successRateReport = this.SelectSuccessRateList(db, specialties);
+            this.WriteToFile(successRateReport, filePath); 
         }
 
-        private IEnumerable<NinjaReport> SelectSuccessRateList(INinjaCatalogueModelUnitOfWork db, Dictionary<string, string> specialties)
+        private IEnumerable<NinjaReport> SelectSuccessRateList(INinjaCatalogueModelUnitOfWork db, IDictionary<string, string> specialties)
         {
             var ninjas = db.Ninja_catalogue_items
                 .OrderBy(item => item.SuccessRate)

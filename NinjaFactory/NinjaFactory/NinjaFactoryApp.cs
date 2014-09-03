@@ -5,11 +5,11 @@
     using System.Windows.Forms;
     using NinjaFactory.DataBase;
     using NinjaFactory.DataBase.MySql;
+    using NinjaFactory.ExcelReporting;
     using NinjaFactory.Imports;
     using NinjaFactory.NinjaCatalogue;
     using NinjaFactory.PDFReporting;
     using NinjaFactory.XMLReporting;
-    using NinjaFactory.ExcelReporting;
 
     /// <summary>
     /// Every ninja fabricator should buy this!
