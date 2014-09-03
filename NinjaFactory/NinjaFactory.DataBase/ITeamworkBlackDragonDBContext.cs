@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-
-namespace NinjaFactory.DataBase
+﻿namespace NinjaFactory.DataBase
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Text;
+
     /// <summary>
     /// A Database context working with the TeamworkBlackDragon Database
     /// </summary>

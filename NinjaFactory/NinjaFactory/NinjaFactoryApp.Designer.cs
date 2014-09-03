@@ -1,11 +1,27 @@
 ﻿namespace NinjaFactory
 {
-    partial class NinjaFactoryApp
+    using System;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Windows.Forms;
+
+    public partial class NinjaFactoryApp
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
+
+        private Button addNewOrdersButton;
+        private Button getReportsAndFinalizeOrdersButton;
+        private Button loadCatalogueInMySQLButton;
+        private Button createReportForLostNinjasButton;
+        private Button removeLostNinjasButton;
+        private Button createNinjaCatalogueButton;
+        private Button createIncomeReportButton;
+        private Button createNinjaRankingRaportButton;
+        private Button setMongoDbForTestingButton;
+        private Button loadNinjaCatalogueToMySqlDirectlyButton;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -13,10 +29,11 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -28,135 +45,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NinjaFactoryApp));
-            this.AddNewOrdersButton = new System.Windows.Forms.Button();
-            this.GetReportsAndFinalizeOrdersButton = new System.Windows.Forms.Button();
-            this.LoadCatalogueInMySQLButton = new System.Windows.Forms.Button();
-            this.CreateReportForLostNinjasButton = new System.Windows.Forms.Button();
-            this.RemoveLostNinjasButton = new System.Windows.Forms.Button();
-            this.CreateNinjaCatalogueButton = new System.Windows.Forms.Button();
-            this.CreateIncomeReportButton = new System.Windows.Forms.Button();
-            this.CreateNinjaRankingRaportButton = new System.Windows.Forms.Button();
-            this.SetMongoDbForTestingButton = new System.Windows.Forms.Button();
-            this.LoadNinjaCatalogueToMySqlDirectlyButton = new System.Windows.Forms.Button();
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(NinjaFactoryApp));
+            this.addNewOrdersButton = new Button();
+            this.getReportsAndFinalizeOrdersButton = new Button();
+            this.loadCatalogueInMySQLButton = new Button();
+            this.createReportForLostNinjasButton = new Button();
+            this.removeLostNinjasButton = new Button();
+            this.createNinjaCatalogueButton = new Button();
+            this.createIncomeReportButton = new Button();
+            this.createNinjaRankingRaportButton = new Button();
+            this.setMongoDbForTestingButton = new Button();
+            this.loadNinjaCatalogueToMySqlDirectlyButton = new Button();
             this.SuspendLayout();
             // 
             // AddNewOrdersButton
             // 
-            this.AddNewOrdersButton.Location = new System.Drawing.Point(12, 12);
-            this.AddNewOrdersButton.Name = "AddNewOrdersButton";
-            this.AddNewOrdersButton.Size = new System.Drawing.Size(175, 106);
-            this.AddNewOrdersButton.TabIndex = 0;
-            this.AddNewOrdersButton.Text = "Add New Orders (zipped exel tables)";
-            this.AddNewOrdersButton.UseVisualStyleBackColor = true;
-            this.AddNewOrdersButton.Click += new System.EventHandler(this.AddNewOrders);
+            this.addNewOrdersButton.Location = new Point(12, 12);
+            this.addNewOrdersButton.Name = "AddNewOrdersButton";
+            this.addNewOrdersButton.Size = new Size(175, 106);
+            this.addNewOrdersButton.TabIndex = 0;
+            this.addNewOrdersButton.Text = "Add New Orders (zipped exel tables)";
+            this.addNewOrdersButton.UseVisualStyleBackColor = true;
+            this.addNewOrdersButton.Click += new EventHandler(this.AddNewOrders);
             // 
             // GetReportsAndFinalizeOrdersButton
             // 
-            this.GetReportsAndFinalizeOrdersButton.Location = new System.Drawing.Point(12, 124);
-            this.GetReportsAndFinalizeOrdersButton.Name = "GetReportsAndFinalizeOrdersButton";
-            this.GetReportsAndFinalizeOrdersButton.Size = new System.Drawing.Size(175, 106);
-            this.GetReportsAndFinalizeOrdersButton.TabIndex = 1;
-            this.GetReportsAndFinalizeOrdersButton.Text = "Get reports (from MongoDB) and finalize operations";
-            this.GetReportsAndFinalizeOrdersButton.UseVisualStyleBackColor = true;
-            this.GetReportsAndFinalizeOrdersButton.Click += new System.EventHandler(this.GetReportsAndFinalizeOrders);
+            this.getReportsAndFinalizeOrdersButton.Location = new Point(12, 124);
+            this.getReportsAndFinalizeOrdersButton.Name = "GetReportsAndFinalizeOrdersButton";
+            this.getReportsAndFinalizeOrdersButton.Size = new Size(175, 106);
+            this.getReportsAndFinalizeOrdersButton.TabIndex = 1;
+            this.getReportsAndFinalizeOrdersButton.Text = "Get reports (from MongoDB) and finalize operations";
+            this.getReportsAndFinalizeOrdersButton.UseVisualStyleBackColor = true;
+            this.getReportsAndFinalizeOrdersButton.Click += new EventHandler(this.GetReportsAndFinalizeOrders);
             // 
             // LoadCatalogueInMySQLButton
             // 
-            this.LoadCatalogueInMySQLButton.Location = new System.Drawing.Point(12, 408);
-            this.LoadCatalogueInMySQLButton.Name = "LoadCatalogueInMySQLButton";
-            this.LoadCatalogueInMySQLButton.Size = new System.Drawing.Size(207, 37);
-            this.LoadCatalogueInMySQLButton.TabIndex = 2;
-            this.LoadCatalogueInMySQLButton.Text = "Load JSON Catalogue in MySQL";
-            this.LoadCatalogueInMySQLButton.UseVisualStyleBackColor = true;
-            this.LoadCatalogueInMySQLButton.Click += new System.EventHandler(this.LoadCatalogueInMySql);
+            this.loadCatalogueInMySQLButton.Location = new Point(12, 408);
+            this.loadCatalogueInMySQLButton.Name = "LoadCatalogueInMySQLButton";
+            this.loadCatalogueInMySQLButton.Size = new Size(207, 37);
+            this.loadCatalogueInMySQLButton.TabIndex = 2;
+            this.loadCatalogueInMySQLButton.Text = "Load JSON Catalogue in MySQL";
+            this.loadCatalogueInMySQLButton.UseVisualStyleBackColor = true;
+            this.loadCatalogueInMySQLButton.Click += new EventHandler(this.LoadCatalogueInMySql);
             // 
             // CreateReportForLostNinjasButton
             // 
-            this.CreateReportForLostNinjasButton.Location = new System.Drawing.Point(12, 451);
-            this.CreateReportForLostNinjasButton.Name = "CreateReportForLostNinjasButton";
-            this.CreateReportForLostNinjasButton.Size = new System.Drawing.Size(207, 37);
-            this.CreateReportForLostNinjasButton.TabIndex = 3;
-            this.CreateReportForLostNinjasButton.Text = "Create report for lost ninjas (XML)";
-            this.CreateReportForLostNinjasButton.UseVisualStyleBackColor = true;
-            this.CreateReportForLostNinjasButton.Click += new System.EventHandler(this.CreateReportForLostNinjas);
+            this.createReportForLostNinjasButton.Location = new Point(12, 451);
+            this.createReportForLostNinjasButton.Name = "CreateReportForLostNinjasButton";
+            this.createReportForLostNinjasButton.Size = new Size(207, 37);
+            this.createReportForLostNinjasButton.TabIndex = 3;
+            this.createReportForLostNinjasButton.Text = "Create report for lost ninjas (XML)";
+            this.createReportForLostNinjasButton.UseVisualStyleBackColor = true;
+            this.createReportForLostNinjasButton.Click += new EventHandler(this.CreateReportForLostNinjas);
             // 
             // RemoveLostNinjasButton
             // 
-            this.RemoveLostNinjasButton.Location = new System.Drawing.Point(12, 494);
-            this.RemoveLostNinjasButton.Name = "RemoveLostNinjasButton";
-            this.RemoveLostNinjasButton.Size = new System.Drawing.Size(207, 37);
-            this.RemoveLostNinjasButton.TabIndex = 4;
-            this.RemoveLostNinjasButton.Text = "Remove lost ninjas (from XML)";
-            this.RemoveLostNinjasButton.UseVisualStyleBackColor = true;
-            this.RemoveLostNinjasButton.Click += new System.EventHandler(this.RemoveLostNinjas);
+            this.removeLostNinjasButton.Location = new Point(12, 494);
+            this.removeLostNinjasButton.Name = "RemoveLostNinjasButton";
+            this.removeLostNinjasButton.Size = new Size(207, 37);
+            this.removeLostNinjasButton.TabIndex = 4;
+            this.removeLostNinjasButton.Text = "Remove lost ninjas (from XML)";
+            this.removeLostNinjasButton.UseVisualStyleBackColor = true;
+            this.removeLostNinjasButton.Click += new EventHandler(this.RemoveLostNinjas);
             // 
             // CreateNinjaCatalogueButton
             // 
-            this.CreateNinjaCatalogueButton.Location = new System.Drawing.Point(327, 12);
-            this.CreateNinjaCatalogueButton.Name = "CreateNinjaCatalogueButton";
-            this.CreateNinjaCatalogueButton.Size = new System.Drawing.Size(151, 106);
-            this.CreateNinjaCatalogueButton.TabIndex = 5;
-            this.CreateNinjaCatalogueButton.Text = "Create ninja catalogue (JSON)";
-            this.CreateNinjaCatalogueButton.UseVisualStyleBackColor = true;
-            this.CreateNinjaCatalogueButton.Click += new System.EventHandler(this.CreateNinjaCatalogue);
+            this.createNinjaCatalogueButton.Location = new Point(327, 12);
+            this.createNinjaCatalogueButton.Name = "CreateNinjaCatalogueButton";
+            this.createNinjaCatalogueButton.Size = new Size(151, 106);
+            this.createNinjaCatalogueButton.TabIndex = 5;
+            this.createNinjaCatalogueButton.Text = "Create ninja catalogue (JSON)";
+            this.createNinjaCatalogueButton.UseVisualStyleBackColor = true;
+            this.createNinjaCatalogueButton.Click += new EventHandler(this.CreateNinjaCatalogue);
             // 
             // CreateIncomeReportButton
             // 
-            this.CreateIncomeReportButton.Location = new System.Drawing.Point(484, 12);
-            this.CreateIncomeReportButton.Name = "CreateIncomeReportButton";
-            this.CreateIncomeReportButton.Size = new System.Drawing.Size(151, 106);
-            this.CreateIncomeReportButton.TabIndex = 6;
-            this.CreateIncomeReportButton.Text = "Create monthly income repport (PDF)";
-            this.CreateIncomeReportButton.UseVisualStyleBackColor = true;
-            this.CreateIncomeReportButton.Click += new System.EventHandler(this.CreateIncomeReport);
+            this.createIncomeReportButton.Location = new Point(484, 12);
+            this.createIncomeReportButton.Name = "CreateIncomeReportButton";
+            this.createIncomeReportButton.Size = new Size(151, 106);
+            this.createIncomeReportButton.TabIndex = 6;
+            this.createIncomeReportButton.Text = "Create monthly income repport (PDF)";
+            this.createIncomeReportButton.UseVisualStyleBackColor = true;
+            this.createIncomeReportButton.Click += new EventHandler(this.CreateIncomeReport);
             // 
             // CreateNinjaRankingRaportButton
             // 
-            this.CreateNinjaRankingRaportButton.Location = new System.Drawing.Point(641, 12);
-            this.CreateNinjaRankingRaportButton.Name = "CreateNinjaRankingRaportButton";
-            this.CreateNinjaRankingRaportButton.Size = new System.Drawing.Size(151, 106);
-            this.CreateNinjaRankingRaportButton.TabIndex = 7;
-            this.CreateNinjaRankingRaportButton.Text = "CreateNinja ranking raport (from MySQL and SQLite to Exel)";
-            this.CreateNinjaRankingRaportButton.UseVisualStyleBackColor = true;
-            this.CreateNinjaRankingRaportButton.Click += new System.EventHandler(this.CreateNinjaRankingRaport);
+            this.createNinjaRankingRaportButton.Location = new Point(641, 12);
+            this.createNinjaRankingRaportButton.Name = "CreateNinjaRankingRaportButton";
+            this.createNinjaRankingRaportButton.Size = new Size(151, 106);
+            this.createNinjaRankingRaportButton.TabIndex = 7;
+            this.createNinjaRankingRaportButton.Text = "CreateNinja ranking raport (from MySQL and SQLite to Exel)";
+            this.createNinjaRankingRaportButton.UseVisualStyleBackColor = true;
+            this.createNinjaRankingRaportButton.Click += new EventHandler(this.CreateNinjaRankingRaport);
             // 
             // SetMongoDbForTestingButton
             // 
-            this.SetMongoDbForTestingButton.Location = new System.Drawing.Point(12, 236);
-            this.SetMongoDbForTestingButton.Name = "SetMongoDbForTestingButton";
-            this.SetMongoDbForTestingButton.Size = new System.Drawing.Size(175, 37);
-            this.SetMongoDbForTestingButton.TabIndex = 8;
-            this.SetMongoDbForTestingButton.Text = "Fill MongoDB for testing";
-            this.SetMongoDbForTestingButton.UseVisualStyleBackColor = true;
-            this.SetMongoDbForTestingButton.Click += new System.EventHandler(this.SetMongoDbForTesting);
+            this.setMongoDbForTestingButton.Location = new Point(12, 236);
+            this.setMongoDbForTestingButton.Name = "SetMongoDbForTestingButton";
+            this.setMongoDbForTestingButton.Size = new Size(175, 37);
+            this.setMongoDbForTestingButton.TabIndex = 8;
+            this.setMongoDbForTestingButton.Text = "Fill MongoDB for testing";
+            this.setMongoDbForTestingButton.UseVisualStyleBackColor = true;
+            this.setMongoDbForTestingButton.Click += new EventHandler(this.SetMongoDbForTesting);
             // 
             // LoadNinjaCatalogueToMySqlDirectlyButton
             // 
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.Location = new System.Drawing.Point(12, 365);
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.Name = "LoadNinjaCatalogueToMySqlDirectlyButton";
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.Size = new System.Drawing.Size(207, 37);
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.TabIndex = 9;
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.Text = "Load Catalogue to MySQL (directly)";
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.UseVisualStyleBackColor = true;
-            this.LoadNinjaCatalogueToMySqlDirectlyButton.Click += new System.EventHandler(this.LoadNinjaCatalogueToMySqlDirectly);
+            this.loadNinjaCatalogueToMySqlDirectlyButton.Location = new Point(12, 365);
+            this.loadNinjaCatalogueToMySqlDirectlyButton.Name = "LoadNinjaCatalogueToMySqlDirectlyButton";
+            this.loadNinjaCatalogueToMySqlDirectlyButton.Size = new Size(207, 37);
+            this.loadNinjaCatalogueToMySqlDirectlyButton.TabIndex = 9;
+            this.loadNinjaCatalogueToMySqlDirectlyButton.Text = "Load Catalogue to MySQL (directly)";
+            this.loadNinjaCatalogueToMySqlDirectlyButton.UseVisualStyleBackColor = true;
+            this.loadNinjaCatalogueToMySqlDirectlyButton.Click += new EventHandler(this.LoadNinjaCatalogueToMySqlDirectly);
             // 
             // NinjaFactoryApp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(804, 543);
-            this.Controls.Add(this.LoadNinjaCatalogueToMySqlDirectlyButton);
-            this.Controls.Add(this.SetMongoDbForTestingButton);
-            this.Controls.Add(this.CreateNinjaRankingRaportButton);
-            this.Controls.Add(this.CreateIncomeReportButton);
-            this.Controls.Add(this.CreateNinjaCatalogueButton);
-            this.Controls.Add(this.RemoveLostNinjasButton);
-            this.Controls.Add(this.CreateReportForLostNinjasButton);
-            this.Controls.Add(this.LoadCatalogueInMySQLButton);
-            this.Controls.Add(this.GetReportsAndFinalizeOrdersButton);
-            this.Controls.Add(this.AddNewOrdersButton);
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackgroundImage = ((Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new Size(804, 543);
+            this.Controls.Add(this.loadNinjaCatalogueToMySqlDirectlyButton);
+            this.Controls.Add(this.setMongoDbForTestingButton);
+            this.Controls.Add(this.createNinjaRankingRaportButton);
+            this.Controls.Add(this.createIncomeReportButton);
+            this.Controls.Add(this.createNinjaCatalogueButton);
+            this.Controls.Add(this.removeLostNinjasButton);
+            this.Controls.Add(this.createReportForLostNinjasButton);
+            this.Controls.Add(this.loadCatalogueInMySQLButton);
+            this.Controls.Add(this.getReportsAndFinalizeOrdersButton);
+            this.Controls.Add(this.addNewOrdersButton);
             this.Name = "NinjaFactoryApp";
             this.Text = "Ninja Factory - TeamBlackDragon";
             this.TopMost = true;
@@ -165,17 +182,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button AddNewOrdersButton;
-        private System.Windows.Forms.Button GetReportsAndFinalizeOrdersButton;
-        private System.Windows.Forms.Button LoadCatalogueInMySQLButton;
-        private System.Windows.Forms.Button CreateReportForLostNinjasButton;
-        private System.Windows.Forms.Button RemoveLostNinjasButton;
-        private System.Windows.Forms.Button CreateNinjaCatalogueButton;
-        private System.Windows.Forms.Button CreateIncomeReportButton;
-        private System.Windows.Forms.Button CreateNinjaRankingRaportButton;
-        private System.Windows.Forms.Button SetMongoDbForTestingButton;
-        private System.Windows.Forms.Button LoadNinjaCatalogueToMySqlDirectlyButton;
     }
 }
-

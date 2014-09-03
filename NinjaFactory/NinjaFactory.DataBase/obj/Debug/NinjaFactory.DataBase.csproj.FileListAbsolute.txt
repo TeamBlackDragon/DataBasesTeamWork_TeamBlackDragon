@@ -69,3 +69,15 @@ C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlack
 C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
 C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
 C:\Users\Boris\Documents\Visual Studio 2012\Projects\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll.config
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.dll
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\NinjaFactory.DataBase.pdb
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.dll
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.dll
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Bson.xml
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\bin\Debug\MongoDB.Driver.xml
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.dll
+C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory.DataBase\obj\Debug\NinjaFactory.DataBase.pdb

@@ -1,40 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using NinjaFactory.DataBase.MySql;
-
-namespace NinjaFactory.NinjaCatalogue
+﻿namespace NinjaFactory.NinjaCatalogue
 {
+    using System.Linq;
+
+    using NinjaFactory.DataBase.MySql;
+
     public class JsonToMySqlImporter
     {
+        private readonly NinjaCatalogueModel mySqlContext;
+        private Ninja_catalogue_item[] catalogue;
+        private NinjaCatalogueJsonParser parser;
+
         public JsonToMySqlImporter(NinjaCatalogueModel mySqlContext)
         {
             this.mySqlContext = mySqlContext;
         }
-
-        public int Run(NinjaCatalogueItem[] catalogue)
-        {
-            this.Catalogue = catalogue;
-            this.SetAllNinjasToDeleted();
-            this.LoadToMySql();
-            return this.catalogue.Length;
-        }
-
-        public int Run(string filePath, NinjaCatalogueJsonParser parser)
-        {
-            this.parser = parser;
-            this.ReadJsonFile(filePath);
-            this.SetAllNinjasToDeleted();
-            this.LoadToMySql();
-            return this.catalogue.Length;
-        }
-
-        private readonly NinjaCatalogueModel mySqlContext;
-        private Ninja_catalogue_item[] catalogue;
-        private NinjaCatalogueJsonParser parser;
 
         private NinjaCatalogueItem[] Catalogue
         {
@@ -56,6 +35,23 @@ namespace NinjaFactory.NinjaCatalogue
             }
         }
 
+        public int Run(NinjaCatalogueItem[] catalogue)
+        {
+            this.Catalogue = catalogue;
+            this.SetAllNinjasToDeleted();
+            this.LoadToMySql();
+            return this.catalogue.Length;
+        }
+
+        public int Run(string filePath, NinjaCatalogueJsonParser parser)
+        {
+            this.parser = parser;
+            this.ReadJsonFile(filePath);
+            this.SetAllNinjasToDeleted();
+            this.LoadToMySql();
+            return this.catalogue.Length;
+        }
+
         private void LoadToMySql()
         {
             foreach (var updatedNinja in this.catalogue)
@@ -70,6 +66,7 @@ namespace NinjaFactory.NinjaCatalogue
                     this.mySqlContext.Add(updatedNinja);
                 }
             }
+
             this.mySqlContext.SaveChanges();
         }
 
@@ -84,6 +81,7 @@ namespace NinjaFactory.NinjaCatalogue
             {
                 item.IsDeleted = true;
             }
+
             this.mySqlContext.SaveChanges();
         }
     }

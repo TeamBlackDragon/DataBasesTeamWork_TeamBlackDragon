@@ -13,6 +13,7 @@
 
     public class MongoDBImport
     {
+        /*
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
@@ -42,7 +43,7 @@
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
-
+        */
         public static void InsertMongoDbReportsInDatabse(INinjaFactoryData db)
         {
             var con = ConfigurationManager.ConnectionStrings["NinjaFactoryMongoDB"];
@@ -106,6 +107,7 @@
             {
                 AddNewEntityToCollection(mongoCollection, jobRep);
             }
+
             return unfinishedJobsReports.Count();
         }
 
@@ -117,10 +119,12 @@
             {
                 throw new ArgumentOutOfRangeException("There is no job with Id '" + rep.Id + "'");
             }
+
             if (job.IsSuccessfull.HasValue == true)
             {
                 throw new ArgumentException("The job with Id '" + rep.Id + "' is already compleated");
             }
+
             return true;
         }
 
@@ -133,8 +137,9 @@
         {
             foreach (var rep in reports)
             {
+                /*
                 // testing. Delete this MessageBox.Show() once the program is confirmed to work.
-                //MessageBox.Show(string.Format(
+                // MessageBox.Show(string.Format(
                 //        "id:{0}, \n" +
                 //        "Success: {1}, \n" +
                 //        "KillCount: {2}, \n" +
@@ -143,7 +148,7 @@
                 //        rep.Success,
                 //        rep.KillCount,
                 //        rep.EndDate));
-
+                */
                 try
                 {
                     if (CheckIfReportIsValid(db, rep))
@@ -204,6 +209,7 @@
 
                 reports.Add(report);
             }
+
             return reports;
         }
 

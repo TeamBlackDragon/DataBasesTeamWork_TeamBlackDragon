@@ -10,6 +10,16 @@
     public class NinjasData : INinjaFactoryData
     {
         /// <summary>
+        /// The context
+        /// </summary>
+        private readonly TeamworkBlackDragonEntities context;
+
+        /// <summary>
+        /// The repositories
+        /// </summary>
+        private readonly IDictionary<Type, object> repositories;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NinjasData" /> class.
         /// </summary>
         public NinjasData()
@@ -82,17 +92,7 @@
         {
             this.context.SaveChanges();
         }
-
-        /// <summary>
-        /// The context
-        /// </summary>
-        private readonly TeamworkBlackDragonEntities context;
-
-        /// <summary>
-        /// The repositories
-        /// </summary>
-        private readonly IDictionary<Type, object> repositories;
-
+        
         /// <summary>
         /// Gets the repository.
         /// </summary>

@@ -3,11 +3,7 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
     using System.Xml.Linq;
     using NinjaFactory.DataBase;
 
@@ -62,16 +58,17 @@
 
             foreach (var report in oldUnfinishedJobs)
             {
-                ninjaXml.Add(new XElement("LostNinjaReport",
-                    new XElement("JobId", report.Job.Id),
-                    new XElement("Client", report.Client.Name),
-                    new XElement("Task", report.Job.Name),
-                    new XElement("Price", report.Job.Price),
-                    new XElement("NinjaId", report.Ninja.Id),
-                    new XElement("NinjaName", report.Ninja.Name),
-                    new XElement("NinjaKillingExperiance", report.Ninja.KillCount),
-                    new XElement("NinjaMinimalPayment", report.Ninja.MinimalPersonalPrice)
-                ));
+                ninjaXml.Add(
+                    new XElement(
+                        "LostNinjaReport",
+                        new XElement("JobId", report.Job.Id),
+                        new XElement("Client", report.Client.Name),
+                        new XElement("Task", report.Job.Name),
+                        new XElement("Price", report.Job.Price),
+                        new XElement("NinjaId", report.Ninja.Id),
+                        new XElement("NinjaName", report.Ninja.Name),
+                        new XElement("NinjaKillingExperiance", report.Ninja.KillCount),
+                        new XElement("NinjaMinimalPayment", report.Ninja.MinimalPersonalPrice)));
             }
 
             ninjaXml.Save(filePath);

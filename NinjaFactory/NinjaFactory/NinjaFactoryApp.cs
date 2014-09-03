@@ -1,37 +1,35 @@
-﻿using System;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
-using NinjaFactory.DataBase;
-using NinjaFactory.DataBase.MySql;
-using NinjaFactory.Imports;
-using NinjaFactory.NinjaCatalogue;
-using NinjaFactory.XMLReporting;
-using NinjaFactory.PDFReporting;
-
-namespace NinjaFactory
+﻿namespace NinjaFactory
 {
+    using System;
+    using System.IO;
+    using System.Windows.Forms;
+    using NinjaFactory.DataBase;
+    using NinjaFactory.DataBase.MySql;
+    using NinjaFactory.Imports;
+    using NinjaFactory.NinjaCatalogue;
+    using NinjaFactory.PDFReporting;
+    using NinjaFactory.XMLReporting;
+
     /// <summary>
     /// Every ninja fabricator should buy this!
     /// </summary>
     public partial class NinjaFactoryApp : Form
     {
         /// <summary>
+        /// My SQL database
+        /// </summary>
+        private NinjaCatalogueModel mySqlDb;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NinjaFactoryApp" /> class.
         /// </summary>
         public NinjaFactoryApp()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.DB = new NinjasData();
-            //this.MySqlDb = new NinjaCatalogueModel();
+            this.mySqlDb = new NinjaCatalogueModel();
         }
-
-        /// <summary>
-        /// My SQL database
-        /// </summary>
-        private NinjaCatalogueModel MySqlDb;
-
+        
         /// <summary>
         /// Gets or sets the database.
         /// </summary>
@@ -56,7 +54,7 @@ namespace NinjaFactory
                 INinjaFactoryData db = this.DB;
 
                 string directoryOfExtractedFiles = "UnimportedJobs";
-                string pattern = "";
+                string pattern = string.Empty;
 
                 ExcelImport.ExtractFile(filePath, directoryOfExtractedFiles);
                 ExcelImport.ProcessExcelFiles(directoryOfExtractedFiles, pattern, db);
@@ -131,7 +129,7 @@ namespace NinjaFactory
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                NinjaCatalogueModel mySqlDb = this.MySqlDb;
+                NinjaCatalogueModel mySqlDb = this.mySqlDb;
 
                 // TODO: Implement and use a library doing this task. Use the filePath and db from above.
                 throw new NotImplementedException("Not Implemented");
@@ -189,7 +187,7 @@ namespace NinjaFactory
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                NinjaCatalogueModel mySqlDb = this.MySqlDb;
+                NinjaCatalogueModel mySqlDb = this.mySqlDb;
 
                 JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb);
                 var recordCount = importer.Run(filePath, new NinjaCatalogueJsonParser());
@@ -204,7 +202,7 @@ namespace NinjaFactory
         /// <param name="e"> The <see cref="EventArgs" /> instance containing the event data. </param>
         private void LoadNinjaCatalogueToMySqlDirectly(object sender, EventArgs e)
         {
-            NinjaCatalogueModel mySqlDb = this.MySqlDb;
+            NinjaCatalogueModel mySqlDb = this.mySqlDb;
             JsonToMySqlImporter importer = new JsonToMySqlImporter(mySqlDb);
             var catalogue = new NinjaCatalogueCreator().GetNinjaCatalogueFromDb(this.DB);
             int recordCount = importer.Run(catalogue);

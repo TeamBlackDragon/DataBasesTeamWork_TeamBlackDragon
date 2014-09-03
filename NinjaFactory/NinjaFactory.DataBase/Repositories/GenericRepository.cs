@@ -1,19 +1,29 @@
-﻿using System;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Linq.Expressions;
-using NinjaFactory.DataBase;
-
-namespace NinjaFactory.DataBase.Repositories
+﻿namespace NinjaFactory.DataBase.Repositories
 {
+    using System;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using NinjaFactory.DataBase;
+
     /// <summary>
     /// Abstraction about a DBSet, working with the TeamworkBlackDragon database
     /// </summary>
     /// <typeparam name="T"> </typeparam>
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
+        /// <summary>
+        /// The context
+        /// </summary>
+        private readonly ITeamworkBlackDragonDBContext context;
+
+        /// <summary>
+        /// The set
+        /// </summary>
+        private readonly IDbSet<T> set;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericRepository{T}" /> class.
         /// </summary>
@@ -30,7 +40,7 @@ namespace NinjaFactory.DataBase.Repositories
         /// <param name="entity"> The entity. </param>
         public void Add(T entity)
         {
-            var entry = AttachIfDetached(entity);
+            var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Added;
         }
 
@@ -49,7 +59,7 @@ namespace NinjaFactory.DataBase.Repositories
         /// <param name="entity"> The entity. </param>
         public void Delete(T entity)
         {
-            var entry = AttachIfDetached(entity);
+            var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Deleted;
         }
 
@@ -79,7 +89,7 @@ namespace NinjaFactory.DataBase.Repositories
         /// <param name="entity"> The entity. </param>
         public void Update(T entity)
         {
-            var entry = AttachIfDetached(entity);
+            var entry = this.AttachIfDetached(entity);
             entry.State = EntityState.Modified;
         }
 
@@ -92,17 +102,7 @@ namespace NinjaFactory.DataBase.Repositories
         {
             return this.SearchFor(conditions);
         }
-
-        /// <summary>
-        /// The context
-        /// </summary>
-        private readonly ITeamworkBlackDragonDBContext context;
-
-        /// <summary>
-        /// The set
-        /// </summary>
-        private readonly IDbSet<T> set;
-
+        
         /// <summary>
         /// Attaches if detached.
         /// </summary>

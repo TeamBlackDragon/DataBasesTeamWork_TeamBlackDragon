@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Linq.Expressions;
-
-namespace NinjaFactory.DataBase.Repositories
+﻿namespace NinjaFactory.DataBase.Repositories
 {
+    using System;
+    using System.Linq;
+    using System.Linq.Expressions;
+
     /// <summary>
     /// Abstraction about some kind of data.
     /// </summary>

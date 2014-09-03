@@ -1,7 +1,7 @@
 ﻿namespace NinjaFactory.Imports
 {
-    using MongoDB.Bson;
     using System;
+    using MongoDB.Bson;
 
     public class JobReport
     {

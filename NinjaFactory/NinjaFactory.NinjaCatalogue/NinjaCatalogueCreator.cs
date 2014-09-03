@@ -15,7 +15,7 @@
         /// <param name="filePath"> the path to the output file containing json report </param>
         public void CreateJson(INinjaFactoryData db, string filePath)
         {
-            var ninjaItems = GetNinjaCatalogueFromDb(db);
+            var ninjaItems = this.GetNinjaCatalogueFromDb(db);
 
             foreach (var item in ninjaItems)
             {

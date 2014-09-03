@@ -1,6 +1,5 @@
 ﻿namespace NinjaFactory.Imports
 {
-    using NinjaFactory.DataBase;
     using System;
     using System.Data;
     using System.Data.OleDb;
@@ -8,9 +7,11 @@
     using System.IO.Compression;
     using System.Linq;
     using System.Windows.Forms;
+    using NinjaFactory.DataBase;
 
     public class ExcelImport
     {
+        /*
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
@@ -35,7 +36,7 @@
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
-
+        */
         public static void ExtractFile(string fullFilePath, string extractToPath)
         {
             int index = fullFilePath.LastIndexOf("\\");
@@ -43,6 +44,7 @@
             {
                 index = 0;
             }
+
             string directory = fullFilePath.Substring(0, index);
             string fileName = fullFilePath.Substring(index);
             ExtractFile(fileName, directory, extractToPath);
@@ -50,19 +52,19 @@
 
         public static void ExtractFile(string zipFileName, string zipSourcePath, string extractToPath)
         {
-            //Check if the extractToPath folder exists
+            ////Check if the extractToPath folder exists
             if (!Directory.Exists(extractToPath))
             {
                 Directory.CreateDirectory(extractToPath);
             }
 
-            //Check if the folder is not empty to delete everything in it
+            ////Check if the folder is not empty to delete everything in it
             if (Directory.GetDirectories(extractToPath).Length >= 0 && Directory.GetFiles(extractToPath).Length >= 0)
             {
                 Directory.Delete(extractToPath + "\\" + zipFileName.Split('.')[0], true);
             }
 
-            //Extract the .zip file
+            ////Extract the .zip file
             ZipFile.ExtractToDirectory(zipSourcePath + "\\" + zipFileName, extractToPath);
         }
 
@@ -105,7 +107,11 @@
             }
         }
 
-        //In this method require the db as parameter if needed
+        /// <summary>
+        /// Imports data in database
+        /// </summary>
+        /// <param name="files"> excel files containing import data </param>
+        /// <param name="db"> the database to import the data in </param>
         private static void ImportExcelFilesIntoDb(string[] files, INinjaFactoryData db)
         {
             string sheetName = "Sales";

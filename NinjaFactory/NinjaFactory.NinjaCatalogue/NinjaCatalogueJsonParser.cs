@@ -1,9 +1,9 @@
-using System.IO;
-using System.Runtime.Serialization.Json;
-using System.Xml;
-
 namespace NinjaFactory.NinjaCatalogue
 {
+    using System.IO;
+    using System.Runtime.Serialization.Json;
+    using System.Xml;
+
     public class NinjaCatalogueJsonParser
     {
         public virtual NinjaCatalogueItem[] Parse(string filePath)

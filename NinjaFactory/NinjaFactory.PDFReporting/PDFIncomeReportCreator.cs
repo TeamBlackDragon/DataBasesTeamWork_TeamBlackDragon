@@ -3,17 +3,17 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using System.Xml.Linq;
-    using NinjaFactory.DataBase;
 
     using iTextSharp.text;
     using iTextSharp.text.pdf;
-    using System.Globalization;
+    using NinjaFactory.DataBase;
 
     public class PDFIncomeReportCreator
     {
@@ -23,7 +23,7 @@
 
             successfullJobs = this.SelectSuccesfullJobs(db);
 
-            WriteToFile(successfullJobs, filePath);
+            this.WriteToFile(successfullJobs, filePath);
         }
 
         private IEnumerable<JobReport> SelectSuccesfullJobs(INinjaFactoryData db)
@@ -65,15 +65,15 @@
                 table.AddCell(entry.Job.Name);
                 table.AddCell(entry.Client.Name);
                 table.AddCell(entry.Ninja.Name);
-                table.AddCell(String.Format("{0:dd-MM-yyyy}", entry.Job.EndDate));
-                table.AddCell(String.Format("{0:C}", entry.Job.Price));
+                table.AddCell(string.Format("{0:dd-MM-yyyy}", entry.Job.EndDate));
+                table.AddCell(string.Format("{0:C}", entry.Job.Price));
                 incomeSum += entry.Job.Price;
             }
 
             PdfPCell sumCell = new PdfPCell(new Phrase("Completed Jobs Total Income:"));
             sumCell.Colspan = 4;
             table.AddCell(sumCell);
-            table.AddCell(String.Format("{0:C}",incomeSum));
+            table.AddCell(string.Format("{0:C}", incomeSum));
 
             doc.Add(table);
 
