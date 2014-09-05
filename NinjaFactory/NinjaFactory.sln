@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory", "NinjaFactory\NinjaFactory.csproj", "{E3F278EA-8295-4DAA-AF34-E810A8FCCC65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.XMLReporting", "NinjaFactory.XMLReporting\NinjaFactory.XMLReporting.csproj", "{369DE656-B56A-4A78-8EDB-A0926C1EAD74}"
@@ -18,6 +16,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.PDFReporting", "NinjaFactory.PDFReporting\NinjaFactory.PDFReporting.csproj", "{8D5A1165-A744-4E59-A6B0-D6A1CC861D4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaFactory.ExcelReporting", "NinjaFactory.ExcelReporting\NinjaFactory.ExcelReporting.csproj", "{38490593-02AA-41EE-9E42-7307887B9F9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F98D6FA1-7DE9-4EDD-81C9-C5CF0BDAEC8D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

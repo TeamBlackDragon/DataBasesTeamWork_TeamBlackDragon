@@ -14,6 +14,7 @@
     public class MongoDBImport
     {
         /*
+
         //================================================================================================
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
@@ -44,6 +45,7 @@
         //                                      HOW TO USE EXAMPLE
         //================================================================================================
         */
+
         public static void InsertMongoDbReportsInDatabse(INinjaFactoryData db)
         {
             var con = ConfigurationManager.ConnectionStrings["NinjaFactoryMongoDB"];
@@ -53,8 +55,8 @@
 
         public static void InsertMongoDbReportsInDatabse(string connectionString, INinjaFactoryData db)
         {
-            var mongoDatabase = GetMongoDatabase(connectionString);
-            var mongoCollection = mongoDatabase.GetCollection("jobs");
+            var mongoDatabase = GetMongoDatabase(connectionString, dbName);
+            var mongoCollection = mongoDatabase.GetCollection(collectionName);
             var reports = GetAllRecordsInCollection(mongoCollection);
             ExportCollectionToDataBase(reports, db);
 
@@ -70,12 +72,15 @@
 
         public static void SetMongoDBForTesting(string connectionString, INinjaFactoryData db)
         {
-            var mongoDatabase = GetMongoDatabase(connectionString);
-            var mongoCollection = mongoDatabase.GetCollection("jobs");
+            var mongoDatabase = GetMongoDatabase(connectionString, dbName);
+            var mongoCollection = mongoDatabase.GetCollection(collectionName);
             ClearRecords(mongoCollection);
             int addedCount = AddSomeRecords(mongoCollection, db);
             MessageBox.Show(string.Format("Removed all rows in the Mongo table, and added {0} [valid] rows for testing.", addedCount));
         }
+
+        private static string collectionName = "JobReports";
+        private static string dbName = "Ninja_Factory";
 
         private static void AddNewEntityToCollection(MongoCollection<BsonDocument> collection, JobReport newEntity)
         {
@@ -138,16 +143,10 @@
             foreach (var rep in reports)
             {
                 /*
+
                 // testing. Delete this MessageBox.Show() once the program is confirmed to work.
-                // MessageBox.Show(string.Format(
-                //        "id:{0}, \n" +
-                //        "Success: {1}, \n" +
-                //        "KillCount: {2}, \n" +
-                //        "EndDate: {3}",
-                //        rep.Id,
-                //        rep.Success,
-                //        rep.KillCount,
-                //        rep.EndDate));
+                // MessageBox.Show(string.Format( "id:{0}, \n" + "Success: {1}, \n" + "KillCount:
+                // {2}, \n" + "EndDate: {3}", rep.Id, rep.Success, rep.KillCount, rep.EndDate));
                 */
                 try
                 {
@@ -213,9 +212,9 @@
             return reports;
         }
 
-        private static MongoDatabase GetMongoDatabase(string connectionString)
+        private static MongoDatabase GetMongoDatabase(string connectionString, string ninjasDBName)
         {
-            return new MongoClient(connectionString).GetServer().GetDatabase("NinjasFactoryDB");
+            return new MongoClient(connectionString).GetServer().GetDatabase(ninjasDBName);
         }
     }
 }

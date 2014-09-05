@@ -277,3 +277,15 @@ C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFacto
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\x64\SQLite.Interop.dll
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\x86\SQLite.Interop.dll
 C:\Users\ARCHANGEL\Documents\GitHub\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\System.Data.SQLite.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\x64\SQLite.Interop.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\x86\SQLite.Interop.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.ExcelReporting.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.PDFReporting.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\System.Data.SQLite.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\EPPlus.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\itextsharp.dll
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.ExcelReporting.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\NinjaFactory.PDFReporting.pdb
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\System.Data.SQLite.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\EPPlus.xml
+D:\Git\DataBasesTeamWork_TeamBlackDragon\NinjaFactory\NinjaFactory\bin\Debug\itextsharp.xml
